@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  astro: ^2.0.18
+  astro: ^2.1.2
 
 dependencies:
   astro: 2.1.2
