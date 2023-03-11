@@ -1,0 +1,130 @@
+---
+import "@fontsource/open-sans";
+
+type Props = {
+  pageTitle: string;
+};
+
+const { pageTitle } = Astro.props;
+
+// Spacing
+const layoutSpace = "10rem";
+
+// Colors
+const primaryColor = "#16232c"; // Dark one
+const secondaryColor = "#C04A4A"; // Red one
+const secondaryColorLighter = "#EB5C5C"; // Lighter red one
+const thirdColor = "#FFF"; // White one
+
+// Fonts
+const fontSizeBig = "6rem";
+const fontSizeMedium = "2rem";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{pageTitle}</title>
+
+    <style
+      is:global
+      define:vars={{
+        layoutSpace,
+        primaryColor,
+        secondaryColor,
+        thirdColor,
+        fontSizeBig,
+        fontSizeMedium,
+        secondaryColorLighter,
+      }}
+    >
+      * {
+        color: var(--thirdColor);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+      }
+    </style>
+
+    <style>
+      body {
+        all: unset;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: "header" "main" "footer";
+        background-color: var(--primaryColor);
+        font-family: "Open Sans", sans-serif;
+      }
+
+      header {
+        grid-area: header;
+      }
+
+      header > nav {
+        padding-left: var(--layoutSpace);
+        padding-right: var(--layoutSpace);
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
+
+      header > nav > ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        gap: 3rem;
+        font-size: 2rem;
+      }
+
+      header a {
+        color: var(--secondaryColor);
+        text-decoration: none;
+      }
+
+      header a:hover {
+        text-decoration: underline;
+        color: var(--secondaryColorLighter);
+      }
+
+      main {
+        grid-area: main;
+        margin-top: 2rem;
+        margin-left: var(--layoutSpace);
+        margin-right: var(--layoutSpace);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Jose Andrés</a>
+          </li>
+          <li>
+            <a href="/blog">Blog</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
