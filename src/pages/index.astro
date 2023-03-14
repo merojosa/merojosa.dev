@@ -6,6 +6,18 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 const pageTitle = "Jose Andrés Mejías Rojas";
 ---
 
+<BaseLayout pageTitle={pageTitle}>
+  <section class="root">
+    <h1>{pageTitle}</h1>
+    <h2>Software Engineer - Research Professor - Instructor</h2>
+
+    <div class="buttons-container">
+      <Button class="index-button" href="/blog">Blog</Button>
+      <Button class="index-button" href="/about">About me</Button>
+    </div>
+  </section>
+</BaseLayout>
+
 <style>
   h1 {
     font-size: var(--fontSizeBig);
@@ -35,15 +47,3 @@ const pageTitle = "Jose Andrés Mejías Rojas";
     font-size: 5.5rem;
   }
 </style>
-
-<BaseLayout pageTitle={pageTitle}>
-  <section class="root">
-    <h1>{pageTitle}</h1>
-    <h2>Software Engineer - Research Professor - Instructor</h2>
-
-    <div class="buttons-container">
-      <Button class="index-button" href="/blog">Blog</Button>
-      <Button class="index-button" href="/about">About me</Button>
-    </div>
-  </section>
-</BaseLayout>
