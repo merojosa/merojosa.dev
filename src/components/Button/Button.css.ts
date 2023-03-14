@@ -11,11 +11,10 @@ export const buttonStyle = style({
 export const anchorStyle = style({
   background: "var(--secondaryColor)",
   textDecoration: "none",
-  fontSize: "var(--fontSizeMedium)",
   padding: "0.5rem 3rem",
   height: "fit-content",
   textAlign: "center",
-  borderRadius: "1rem",
+  borderRadius: "var(--borderRadius)",
   ":hover": {
     background: "var(--secondaryColorLighter)",
   },

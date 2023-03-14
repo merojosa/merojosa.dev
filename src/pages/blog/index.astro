@@ -4,32 +4,77 @@ import { getCollection } from "astro:content";
 
 const pageTitle = "Jose Andrés' Blog";
 
-const restOfBlogs = (await getCollection("blog")).sort(
+const restOfPosts = (await getCollection("blog")).sort(
   (b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
-const newestBlog = restOfBlogs.shift();
+const newestPost = restOfPosts.shift();
+
+const displayDate = (date: Date) =>
+  new Intl.DateTimeFormat("local", {
+    dateStyle: "full",
+  }).format(date);
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <h1>{pageTitle}</h1>
 
   {
-    newestBlog ? (
-      <>
-        <section>
-          <h2>{newestBlog?.data.title}</h2>
-        </section>
+    newestPost ? (
+      <section class="posts-container">
+        <article class="newest-post">
+          <h2>{newestPost.data.title}</h2>
+          <p>{newestPost.data.description}</p>
+          <span class="date-published">
+            {displayDate(newestPost.data.pubDate)}
+          </span>
+        </article>
 
-        <div>
-          {restOfBlogs.map((blog) => (
-            <section>
+        <section class="rest-of-posts">
+          {restOfPosts.map((blog) => (
+            <article>
               <h2>{blog.data.title}</h2>
-            </section>
+            </article>
           ))}
-        </div>
-      </>
+        </section>
+      </section>
     ) : (
       <p>No entries</p>
     )
   }
 </BaseLayout>
+
+<style>
+  h1 {
+    font-size: var(--fontSizeBig);
+    margin-bottom: 3rem;
+  }
+
+  .posts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .newest-post {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    height: 20rem;
+    justify-content: center;
+    background-color: black;
+    padding: 1.5rem;
+    border-radius: var(--borderRadius);
+  }
+  .newest-post > h2 {
+    font-size: var(--fontSizeMedium);
+  }
+
+  .rest-of-posts > article > h2 {
+    font-size: var(--fontSizeRegular);
+  }
+
+  .date-published {
+    opacity: 0.75;
+  }
+</style>
