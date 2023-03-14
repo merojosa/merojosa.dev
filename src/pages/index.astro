@@ -14,14 +14,36 @@ import BaseLayout from "@layouts/BaseLayout.astro";
     font-size: var(--fontSizeMedium);
     text-align: center;
   }
+
+  .root {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 20% 10% 70%;
+    align-items: center;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .buttons-container .index-button {
+    width: 40%;
+    padding: 3rem 0;
+    font-size: 5.5rem;
+  }
 </style>
 
 <BaseLayout pageTitle="Jose Andrés Mejías Rojas">
-  <h1>Jose Andrés Mejías Rojas</h1>
-  <h2>Software Engineer - Research Professor - Instructor</h2>
+  <section class="root">
+    <h1>Jose Andrés Mejías Rojas</h1>
+    <h2>Software Engineer - Research Professor - Instructor</h2>
 
-  <Button
-    client:visible
-    onClick={(event) => console.log("BREAKPOINT on click", event)}
-  />
+    <div class="buttons-container">
+      <Button client:load className="index-button" href="/blog">Blog</Button>
+      <Button client:load className="index-button" href="/about">
+        About me
+      </Button>
+    </div>
+  </section>
 </BaseLayout>
