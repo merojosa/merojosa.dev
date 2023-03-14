@@ -67,7 +67,7 @@ const borderRadius = "1rem";
     <style>
       body {
         all: unset;
-        height: 100vh;
+        min-height: 100vh;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
@@ -111,9 +111,10 @@ const borderRadius = "1rem";
 
       main {
         grid-area: main;
-        margin-top: 2rem;
         margin-left: var(--layoutSpace);
         margin-right: var(--layoutSpace);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
       }
     </style>
   </head>
