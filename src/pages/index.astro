@@ -2,6 +2,8 @@
 // import Button from "@components/Button";
 import Button from "@components/Button/Button.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+
+const pageTitle = "Jose Andrés Mejías Rojas";
 ---
 
 <style>
@@ -34,9 +36,9 @@ import BaseLayout from "@layouts/BaseLayout.astro";
   }
 </style>
 
-<BaseLayout pageTitle="Jose Andrés Mejías Rojas">
+<BaseLayout pageTitle={pageTitle}>
   <section class="root">
-    <h1>Jose Andrés Mejías Rojas</h1>
+    <h1>{pageTitle}</h1>
     <h2>Software Engineer - Research Professor - Instructor</h2>
 
     <div class="buttons-container">
