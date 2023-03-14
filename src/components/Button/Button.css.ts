@@ -16,4 +16,7 @@ export const anchorStyle = style({
   height: "fit-content",
   textAlign: "center",
   borderRadius: "1rem",
+  ":hover": {
+    background: "var(--secondaryColorLighter)",
+  },
 });
