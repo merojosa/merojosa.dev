@@ -1,0 +1,35 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const pageTitle = "Jose Andrés' Blog";
+
+const restOfBlogs = (await getCollection("blog")).sort(
+  (b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+const newestBlog = restOfBlogs.shift();
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h1>{pageTitle}</h1>
+
+  {
+    newestBlog ? (
+      <>
+        <section>
+          <h2>{newestBlog?.data.title}</h2>
+        </section>
+
+        <div>
+          {restOfBlogs.map((blog) => (
+            <section>
+              <h2>{blog.data.title}</h2>
+            </section>
+          ))}
+        </div>
+      </>
+    ) : (
+      <p>No entries</p>
+    )
+  }
+</BaseLayout>
