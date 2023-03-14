@@ -92,9 +92,11 @@ const fontSizeMedium = "2rem";
       header a {
         color: var(--secondaryColor);
         text-decoration: none;
+        font-weight: bolder;
       }
 
-      header a:hover {
+      header a:hover,
+      header .is-active {
         text-decoration: underline;
         color: var(--secondaryColorLighter);
       }
@@ -126,5 +128,17 @@ const fontSizeMedium = "2rem";
     <main>
       <slot />
     </main>
+
+    <script>
+      const currentPath = document.location.pathname;
+      const navLinkElements = document.querySelectorAll(
+        "header > nav > ul > li > a"
+      );
+      navLinkElements.forEach((navLink) => {
+        if (navLink.getAttribute("href") === currentPath) {
+          navLink.classList.add("is-active");
+        }
+      });
+    </script>
   </body>
 </html>
