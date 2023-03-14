@@ -21,7 +21,7 @@ const displayDate = (date: Date) =>
   {
     newestPost ? (
       <section class="posts-container">
-        <article class="newest-post">
+        <article class="post-card newest-post">
           <h2>{newestPost.data.title}</h2>
           <p>{newestPost.data.description}</p>
           <span class="date-published">
@@ -31,8 +31,12 @@ const displayDate = (date: Date) =>
 
         <section class="rest-of-posts">
           {restOfPosts.map((blog) => (
-            <article>
+            <article class="post-card">
               <h2>{blog.data.title}</h2>
+              <p>{blog.data.description}</p>
+              <span class="date-published">
+                {displayDate(newestPost.data.pubDate)}
+              </span>
             </article>
           ))}
         </section>
@@ -56,15 +60,18 @@ const displayDate = (date: Date) =>
     gap: 5rem;
   }
 
-  .newest-post {
+  .post-card {
     display: flex;
     flex-direction: column;
-    width: 30rem;
-    height: 20rem;
     justify-content: center;
     background-color: black;
-    padding: 1.5rem;
     border-radius: var(--borderRadius);
+    padding: 1.5rem;
+  }
+
+  .newest-post {
+    width: 30rem;
+    height: 20rem;
   }
   .newest-post > h2 {
     font-size: var(--fontSizeMedium);
@@ -76,5 +83,11 @@ const displayDate = (date: Date) =>
 
   .date-published {
     opacity: 0.75;
+  }
+
+  .rest-of-posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
   }
 </style>
