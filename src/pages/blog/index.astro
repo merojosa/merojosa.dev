@@ -30,12 +30,12 @@ const displayDate = (date: Date) =>
         </article>
 
         <section class="rest-of-posts">
-          {restOfPosts.map((blog) => (
+          {restOfPosts.map((post) => (
             <article class="post-card">
-              <h2>{blog.data.title}</h2>
-              <p>{blog.data.description}</p>
+              <h2>{post.data.title}</h2>
+              <p>{post.data.description}</p>
               <span class="date-published">
-                {displayDate(newestPost.data.pubDate)}
+                {displayDate(post.data.pubDate)}
               </span>
             </article>
           ))}
@@ -88,6 +88,10 @@ const displayDate = (date: Date) =>
   .rest-of-posts {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
+  }
+
+  .rest-of-posts > article {
+    height: 15rem;
   }
 </style>
