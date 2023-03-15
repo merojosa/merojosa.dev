@@ -11,7 +11,7 @@ const newestPost = restOfPosts.shift();
 
 const displayDate = (date: Date) =>
   new Intl.DateTimeFormat("local", {
-    dateStyle: "full",
+    dateStyle: "long",
   }).format(date);
 ---
 
@@ -64,21 +64,23 @@ const displayDate = (date: Date) =>
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: black;
     border-radius: var(--borderRadius);
     padding: 1.5rem;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
   }
 
   .newest-post {
-    width: 30rem;
-    height: 20rem;
+    width: 28rem;
+    height: 16rem;
   }
   .newest-post > h2 {
-    font-size: var(--fontSizeMedium);
+    font-size: var(--fontSizeRegular);
   }
 
   .rest-of-posts > article > h2 {
-    font-size: var(--fontSizeRegular);
+    font-size: var(--fontSizeSmall);
   }
 
   .date-published {
@@ -92,6 +94,6 @@ const displayDate = (date: Date) =>
   }
 
   .rest-of-posts > article {
-    height: 15rem;
+    height: 16rem;
   }
 </style>
