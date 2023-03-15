@@ -81,28 +81,31 @@ const displayDate = (date: Date) =>
     text-align: left;
   }
 
+  .date-published {
+    opacity: 0.75;
+  }
+
+  /* Newest post: */
+
   .newest-post {
     width: 28rem;
     height: 16rem;
   }
+
   .newest-post h2 {
     font-size: var(--fontSize2);
   }
 
-  /* Rest of posts */
-
-  .rest-of-posts h2 {
-    font-size: var(--fontSize1);
-  }
-
-  .date-published {
-    opacity: 0.75;
-  }
+  /* Rest of posts: */
 
   .rest-of-posts {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1.5rem;
+  }
+
+  .rest-of-posts h2 {
+    font-size: var(--fontSize1);
   }
 
   .rest-of-posts > article > .post-button {
