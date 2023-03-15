@@ -1,0 +1,43 @@
+---
+import * as styles from "./styles/Button.css";
+import type { HTMLAttributes } from "astro/types";
+
+type Props = (
+  | ({
+      href: string;
+    } & HTMLAttributes<"a">)
+  | ({
+      href?: never;
+    } & HTMLAttributes<"button">)
+) & {
+  children: any;
+  buttonType?: "primary" | "secondary";
+};
+
+const { buttonType = "primary", ...restProps } = Astro.props;
+
+const getStyle = (buttonType: Props["buttonType"]) => {
+  switch (buttonType) {
+    case "primary":
+      return styles.primaryAnchorStyle;
+    case "secondary":
+      return styles.secondaryAnchorStyle;
+    default:
+      return null;
+  }
+};
+
+const style = getStyle(buttonType);
+---
+
+{
+  restProps.href !== undefined ? (
+    <a class:list={[style, restProps.class]} {...restProps}>
+      <slot />
+    </a>
+  ) : (
+    <button class:list={[restProps.class]} {...restProps}>
+      <slot />
+    </button>
+  )
+}
