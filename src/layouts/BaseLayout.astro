@@ -1,6 +1,6 @@
 ---
 import "@fontsource/open-sans";
-import { blogMainStyle } from "./BaseLayout.css";
+import { blogMainStyle } from "./styles/BaseLayout.css";
 
 type Props = {
   pageTitle: string;
@@ -145,7 +145,8 @@ const borderRadius = "1rem";
     </main>
 
     <script>
-      const currentPath = document.location.pathname;
+      const currentPath = `/${location.pathname.split("/")[1]}`;
+
       const navLinkElements = document.querySelectorAll(
         "header > nav > ul > li > a"
       );
