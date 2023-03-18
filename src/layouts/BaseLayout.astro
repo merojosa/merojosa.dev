@@ -1,14 +1,18 @@
 ---
 import "@fontsource/open-sans";
+import { blogMainStyle } from "./BaseLayout.css";
 
 type Props = {
   pageTitle: string;
+  type?: "normal" | "blog";
 };
 
-const { pageTitle } = Astro.props;
+const { pageTitle, type = "normal" } = Astro.props;
 
 // Spacing
 const layoutSpace = "18rem";
+
+const mainExtraStyles = type === "blog" ? blogMainStyle : null;
 
 // Colors
 const primaryColor = "#16232c"; // Dark one
@@ -136,7 +140,7 @@ const borderRadius = "1rem";
         </ul>
       </nav>
     </header>
-    <main>
+    <main class:list={[mainExtraStyles]}>
       <slot />
     </main>
 
