@@ -15,7 +15,15 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BaseLayout type="blog" pageTitle={post.data.title}>
+<!-- Fix layout, zooming in causes horrible look-->
+<BaseLayout pageTitle={post.data.title}>
   <h1>{post.data.title}</h1>
   <Content />
 </BaseLayout>
+
+<style is:global>
+  p {
+    font-size: 1.25rem;
+    line-height: 2;
+  }
+</style>

@@ -1,19 +1,14 @@
 ---
 import "@fontsource/open-sans";
-import { blogMainStyle } from "./styles/BaseLayout.css";
-import Header from "@components/Header.astro";
 
 type Props = {
   pageTitle: string;
-  type?: "normal" | "blog";
 };
 
-const { pageTitle, type = "normal" } = Astro.props;
+const { pageTitle } = Astro.props;
 
 // Spacing
 const layoutSpace = "18rem";
-
-const mainExtraStyles = type === "blog" ? blogMainStyle : null;
 
 // Colors
 const primaryColor = "#16232c"; // Dark one
@@ -74,7 +69,8 @@ const borderRadius = "1rem";
     <style>
       body {
         all: unset;
-        min-height: 100vh;
+        min-height: 800px;
+        height: 100vh;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
@@ -83,19 +79,84 @@ const borderRadius = "1rem";
         font-family: "Open Sans", sans-serif;
       }
 
+      body > * {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1200px;
+      }
+
+      header {
+        grid-area: header;
+      }
+
+      header > nav {
+        padding-left: var(--layoutSpace);
+        padding-right: var(--layoutSpace);
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
+
+      header > nav > ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        gap: 3rem;
+        font-size: 2rem;
+      }
+
+      header a {
+        color: var(--secondaryColor);
+        text-decoration: none;
+        font-weight: bolder;
+      }
+
+      header a:hover,
+      header .is-active {
+        text-decoration: underline;
+        color: var(--secondaryColorLighter);
+      }
+
       main {
         grid-area: main;
-        margin-left: var(--layoutSpace);
-        margin-right: var(--layoutSpace);
         margin-top: 2rem;
         margin-bottom: 2rem;
       }
     </style>
   </head>
   <body>
-    <Header />
-    <main class:list={[mainExtraStyles]}>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Jose Andrés</a>
+          </li>
+          <li>
+            <a href="/blog">Blog</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
       <slot />
     </main>
+
+    <script>
+      const currentPath = `/${location.pathname.split("/")[1]}`;
+
+      const navLinkElements = document.querySelectorAll(
+        "header > nav > ul > li > a"
+      );
+      navLinkElements.forEach((navLink) => {
+        if (navLink.getAttribute("href") === currentPath) {
+          navLink.classList.add("is-active");
+        }
+      });
+    </script>
   </body>
 </html>
