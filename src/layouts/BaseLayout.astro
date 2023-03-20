@@ -1,6 +1,7 @@
 ---
 import "@fontsource/open-sans";
 import { blogMainStyle } from "./styles/BaseLayout.css";
+import Header from "@components/Header.astro";
 
 type Props = {
   pageTitle: string;
@@ -82,39 +83,6 @@ const borderRadius = "1rem";
         font-family: "Open Sans", sans-serif;
       }
 
-      header {
-        grid-area: header;
-      }
-
-      header > nav {
-        padding-left: var(--layoutSpace);
-        padding-right: var(--layoutSpace);
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
-      }
-
-      header > nav > ul {
-        display: flex;
-        flex-direction: row;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        gap: 3rem;
-        font-size: 2rem;
-      }
-
-      header a {
-        color: var(--secondaryColor);
-        text-decoration: none;
-        font-weight: bolder;
-      }
-
-      header a:hover,
-      header .is-active {
-        text-decoration: underline;
-        color: var(--secondaryColorLighter);
-      }
-
       main {
         grid-area: main;
         margin-left: var(--layoutSpace);
@@ -125,36 +93,9 @@ const borderRadius = "1rem";
     </style>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Jose Andrés</a>
-          </li>
-          <li>
-            <a href="/blog">Blog</a>
-          </li>
-          <li>
-            <a href="/about">About</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <Header />
     <main class:list={[mainExtraStyles]}>
       <slot />
     </main>
-
-    <script>
-      const currentPath = `/${location.pathname.split("/")[1]}`;
-
-      const navLinkElements = document.querySelectorAll(
-        "header > nav > ul > li > a"
-      );
-      navLinkElements.forEach((navLink) => {
-        if (navLink.getAttribute("href") === currentPath) {
-          navLink.classList.add("is-active");
-        }
-      });
-    </script>
   </body>
 </html>
