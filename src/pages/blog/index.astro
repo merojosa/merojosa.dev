@@ -16,7 +16,10 @@ const displayDate = (date: Date) =>
   }).format(date);
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription="A software engineering blog by Jose Andrés."
+>
   <h1>{pageTitle}</h1>
 
   {

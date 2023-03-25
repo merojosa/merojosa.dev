@@ -3,9 +3,10 @@ import "@fontsource/open-sans";
 
 type Props = {
   pageTitle: string;
+  pageDescription: string;
 };
 
-const { pageTitle } = Astro.props;
+const { pageTitle, pageDescription } = Astro.props;
 
 // Spacing
 const layoutSpace = "18rem";
@@ -38,6 +39,7 @@ const borderRadius = "1rem";
     <meta name="generator" content={Astro.generator} />
 
     <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
 
     <style
       is:global
@@ -72,8 +74,7 @@ const borderRadius = "1rem";
     <style>
       body {
         all: unset;
-        min-height: 800px;
-        height: 100vh;
+        min-height: 100vh;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;

@@ -15,7 +15,10 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BaseLayout pageTitle={post.data.title}>
+<BaseLayout
+  pageTitle={`${post.data.title} | Jose Andrés`}
+  pageDescription={post.data.description}
+>
   <h1>{post.data.title}</h1>
   <article class="post-wrapper">
     <Content />
@@ -31,7 +34,7 @@ const { Content } = await post.render();
   }
 
   .post-wrapper {
-    width: 43em;
+    width: 42em;
   }
 
   h1 {
