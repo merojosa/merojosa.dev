@@ -1,12 +1,17 @@
 ---
 import "@fontsource/open-sans";
 
+import Github from "@components/icons/Github.astro";
+import LinkedIn from "@components/icons/LinkedIn.astro";
+import Rss from "@components/icons/Rss.astro";
+import Twitter from "@components/icons/Twitter.astro";
+
 type Props = {
   pageTitle: string;
   pageDescription: string;
 };
 
-const { pageTitle, pageDescription } = Astro.props;
+const { pageTitle, pageDescription, frontmatter } = Astro.props;
 
 // Spacing
 const layoutSpace = "18rem";
@@ -38,8 +43,11 @@ const borderRadius = "1rem";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
-    <title>{pageTitle}</title>
-    <meta name="description" content={pageDescription} />
+    <title>{pageTitle || frontmatter.pageTitle}</title>
+    <meta
+      name="description"
+      content={pageDescription || frontmatter.pageDescription}
+    />
 
     <style
       is:global
@@ -124,6 +132,36 @@ const borderRadius = "1rem";
         width: 75rem;
         margin: 2rem auto;
       }
+
+      footer {
+        grid-area: footer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+        margin: 2rem;
+      }
+
+      footer > p {
+        margin: 0;
+      }
+
+      footer > div {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        gap: 1rem;
+      }
+
+      footer > .icons-container > a {
+        display: flex;
+        width: 35px;
+      }
+
+      footer > .icons-container > a:hover {
+        opacity: 0.6;
+      }
     </style>
   </head>
   <body>
@@ -147,17 +185,35 @@ const borderRadius = "1rem";
       <slot />
     </main>
 
-    <script>
-      const currentPath = `/${location.pathname.split("/")[1]}`;
-
-      const navLinkElements = document.querySelectorAll(
-        "header > nav > ul > li > a"
-      );
-      navLinkElements.forEach((navLink) => {
-        if (navLink.getAttribute("href") === currentPath) {
-          navLink.classList.add("is-active");
-        }
-      });
-    </script>
+    <footer>
+      <p>Made by me with Astro ❤️</p>
+      <div class="icons-container">
+        <a href="https://github.com/merojosa/" target="_blank">
+          <Github />
+        </a>
+        <a href="https://www.linkedin.com/in/merojosa/" target="_blank">
+          <LinkedIn />
+        </a>
+        <a href="https://twitter.com/merojosa" target="_blank">
+          <Twitter />
+        </a>
+        <a href="https://twitter.com/merojosa" target="_blank">
+          <Rss />
+        </a>
+      </div>
+    </footer>
   </body>
+
+  <script>
+    const currentPath = `/${location.pathname.split("/")[1]}`;
+
+    const navLinkElements = document.querySelectorAll(
+      "header > nav > ul > li > a"
+    );
+    navLinkElements.forEach((navLink) => {
+      if (navLink.getAttribute("href") === currentPath) {
+        navLink.classList.add("is-active");
+      }
+    });
+  </script>
 </html>
