@@ -11,7 +11,12 @@ const pageTitle = "Jose Andrés Mejías Rojas";
 >
   <section class="root">
     <h1>{pageTitle}</h1>
-    <h2>Software Engineer - Research Professor - Instructor</h2>
+
+    <div class="subtitles-container">
+      <span>Software Engineer</span>
+      <span>Research Professor</span>
+      <span>Instructor</span>
+    </div>
 
     <div class="buttons-container">
       <Button class="index-button" href="/blog">Blog</Button>
@@ -26,9 +31,15 @@ const pageTitle = "Jose Andrés Mejías Rojas";
     text-align: center;
   }
 
-  h2 {
+  .subtitles-container {
     font-size: var(--fontSize1);
     text-align: center;
+    margin: 2.5rem 0;
+  }
+
+  .subtitles-container > span::after {
+    content: "\a";
+    white-space: pre;
   }
 
   .buttons-container {
@@ -41,8 +52,8 @@ const pageTitle = "Jose Andrés Mejías Rojas";
   }
 
   .buttons-container .index-button {
-    width: 100%;
-    padding: 2rem 0;
+    width: 80%;
+    padding: 1.5rem 0;
     font-size: var(--fontSize2);
   }
 
@@ -51,7 +62,7 @@ const pageTitle = "Jose Andrés Mejías Rojas";
       font-size: var(--fontSize3);
     }
 
-    h2 {
+    .subtitles-container {
       font-size: var(--fontSize2);
     }
   }
@@ -66,20 +77,9 @@ const pageTitle = "Jose Andrés Mejías Rojas";
     }
   }
 
-  @media (min-width: 75rem) {
-    h1 {
-      font-size: var(--fontSize5);
-    }
-
-    h2 {
-      font-size: var(--fontSize2);
-    }
-
-    .root {
-      display: grid;
-      height: 100%;
-      grid-template-rows: 30% 10% 45%;
-      align-items: center;
+  @media (min-width: 700px) {
+    .buttons-container .index-button {
+      width: 40%;
     }
 
     .buttons-container {
@@ -87,11 +87,26 @@ const pageTitle = "Jose Andrés Mejías Rojas";
       gap: 0;
       margin: 0;
     }
+  }
+
+  @media (min-width: 900px) {
+    .subtitles-container > span::after {
+      content: " - ";
+    }
+
+    .subtitles-container > span:last-child::after {
+      content: unset;
+    }
+  }
+
+  @media (min-width: 75rem) {
+    h1 {
+      font-size: var(--fontSize5);
+    }
 
     .buttons-container .index-button {
       font-size: 5.5rem;
       padding: 3rem 0;
-      width: 40%;
     }
   }
 </style>
