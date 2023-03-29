@@ -108,7 +108,7 @@ const borderRadius = "1rem";
         list-style-type: none;
         margin: 0;
         padding: 0;
-        gap: 3rem;
+        gap: 2rem;
       }
 
       header a {
@@ -153,6 +153,12 @@ const borderRadius = "1rem";
       footer > .icons-container > a {
         display: flex;
         width: 35px;
+      }
+
+      @media (min-width: 400px) {
+        header > nav > ul {
+          font-size: var(--fontSize1);
+        }
       }
 
       footer > .icons-container > a:hover {
