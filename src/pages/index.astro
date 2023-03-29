@@ -22,7 +22,7 @@ const pageTitle = "Jose Andrés Mejías Rojas";
 
 <style>
   h1 {
-    font-size: var(--fontSize5);
+    font-size: var(--fontSize3);
     text-align: center;
   }
 
@@ -34,18 +34,46 @@ const pageTitle = "Jose Andrés Mejías Rojas";
   .root {
     display: grid;
     height: 100%;
-    grid-template-rows: 30% 10% 45%;
     align-items: center;
   }
 
   .buttons-container {
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
+    gap: 3rem;
   }
 
   .buttons-container .index-button {
-    width: 40%;
-    padding: 3rem 0;
-    font-size: 5.5rem;
+    width: 100%;
+    padding: 2rem 0;
+    font-size: var(--fontSize2);
+  }
+  @media (min-width: 75rem) {
+    h1 {
+      font-size: var(--fontSize5);
+    }
+
+    h2 {
+      font-size: var(--fontSize2);
+    }
+
+    .root {
+      display: grid;
+      height: 100%;
+      grid-template-rows: 30% 10% 45%;
+      align-items: center;
+    }
+
+    .buttons-container {
+      flex-direction: row;
+      gap: 0;
+    }
+
+    .buttons-container .index-button {
+      width: 40%;
+      font-size: 5.5rem;
+      padding: 3rem 0;
+    }
   }
 </style>
