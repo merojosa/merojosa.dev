@@ -11,17 +11,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.18.1",
+    "@astrojs/mdx": "^0.18.2",
     "@astrojs/react": "^2.1.0",
     "@fontsource/open-sans": "^4.5.14",
-    "astro": "^2.1.2",
+    "astro": "^2.1.8",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.28",
+    "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.11",
-    "@vanilla-extract/css": "^1.10.0",
+    "@vanilla-extract/css": "^1.11.0",
     "@vanilla-extract/vite-plugin": "^3.8.0"
   }
 }
