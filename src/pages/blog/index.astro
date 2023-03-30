@@ -5,10 +5,9 @@ import { getCollection } from "astro:content";
 
 const pageTitle = "Jose Andrés' Blog";
 
-const restOfPosts = (await getCollection("blog")).sort(
+const [newestPost, ...restOfPosts] = (await getCollection("blog")).sort(
   (b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
-const newestPost = restOfPosts.shift();
 
 const displayDate = (date: Date) =>
   new Intl.DateTimeFormat("local", {
