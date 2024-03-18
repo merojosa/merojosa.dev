@@ -10,7 +10,7 @@ type Props = {
   pageDescription: string;
 };
 
-const { pageTitle, pageDescription, frontmatter } = Astro.props;
+const { pageTitle, pageDescription } = Astro.props;
 
 // Spacing
 const layoutSpace = "18rem";
@@ -42,11 +42,8 @@ const borderRadius = "1rem";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
-    <title>{pageTitle || frontmatter.pageTitle}</title>
-    <meta
-      name="description"
-      content={pageDescription || frontmatter.pageDescription}
-    />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
 
     <style
       is:global
@@ -130,31 +127,20 @@ const borderRadius = "1rem";
       footer {
         grid-area: footer;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
-        margin: 2rem 1rem;
-      }
-
-      footer > p {
-        margin: 0;
-      }
-
-      footer > div {
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
         align-content: center;
+        margin: 2rem 1rem;
+        justify-content: space-around;
         gap: 1rem;
       }
 
-      footer > .icons-container > a {
+      footer.icons-container > a {
         display: flex;
         width: 35px;
       }
 
-      footer > .icons-container > a:hover {
+      footer.icons-container > a:hover {
         opacity: 0.6;
       }
 
@@ -188,67 +174,32 @@ const borderRadius = "1rem";
         }
 
         footer {
-          gap: 0.75rem;
+          gap: 2rem;
           margin: 2rem;
+          justify-content: center;
         }
 
         footer > p {
           font-size: var(--fontSize1);
         }
-
-        footer > .icons-container {
-          justify-content: center;
-        }
       }
     </style>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Jose Andrés</a>
-          </li>
-          <li>
-            <a href="/blog">Blog</a>
-          </li>
-          <li>
-            <a href="/about">About</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
     <main>
       <slot />
     </main>
 
-    <footer>
-      <p>Made by me with Astro ❤️</p>
-      <div class="icons-container">
-        <a href="https://github.com/merojosa/" target="_blank">
-          <Github />
-        </a>
-        <a href="https://www.linkedin.com/in/merojosa/" target="_blank">
-          <LinkedIn />
-        </a>
-        <a href="https://twitter.com/merojosa" target="_blank">
-          <Twitter />
-        </a>
-      </div>
+    <footer class="icons-container">
+      <a href="https://github.com/merojosa/" target="_blank">
+        <Github />
+      </a>
+      <a href="https://www.linkedin.com/in/merojosa/" target="_blank">
+        <LinkedIn />
+      </a>
+      <a href="https://twitter.com/merojosa" target="_blank">
+        <Twitter />
+      </a>
     </footer>
   </body>
-
-  <script>
-    const currentPath = `/${location.pathname.split("/")[1]}`;
-
-    const navLinkElements = document.querySelectorAll(
-      "header > nav > ul > li > a"
-    );
-    navLinkElements.forEach((navLink) => {
-      if (navLink.getAttribute("href") === currentPath) {
-        navLink.classList.add("is-active");
-      }
-    });
-  </script>
 </html>

@@ -4,27 +4,21 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "sst bind astro dev",
-    "start": "astro dev",
+    "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "sst:deploy": "sst deploy",
-    "sst:dev": "sst dev"
+    "sst:dev": "sst bind astro dev",
+    "sst:deploy": "sst deploy"
   },
   "dependencies": {
-    "@astrojs/react": "^3.0.9",
-    "@fontsource/open-sans": "^5.0.22",
-    "astro": "^4.3.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@fontsource/open-sans": "^5.0.27",
+    "astro": "^4.5.5"
   },
   "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.1",
-    "sst": "^2.40.1",
-    "aws-cdk-lib": "2.124.0",
+    "sst": "2.41.2",
+    "aws-cdk-lib": "2.132.1",
     "constructs": "10.3.0",
-    "astro-sst": "^2.40.1"
+    "astro-sst": "2.41.2"
   }
 }
