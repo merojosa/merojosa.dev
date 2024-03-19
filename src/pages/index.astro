@@ -3,8 +3,8 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  pageTitle="Jose Andrés"
-  pageDescription="Jose Andres' personal website"
+  pageTitle="Jose Andrés Mejías"
+  pageDescription="Jose Andrés' personal website"
 >
   <section class="root">
     <p>Hey! I'm Jose Andrés.</p>
@@ -18,7 +18,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
     </p>
 
     <p>
-      These is what I'm currently enthusiast of:
+      This is what I'm currently enthusiast of:
       <ul>
         <li>
           JavaScript ecosystem: React, Node.js, Next.js, React Native, Svelte,
@@ -36,8 +36,8 @@ import BaseLayout from "@layouts/BaseLayout.astro";
         <li>Machine Learning: Python, Deep Learning, YOLO, Amazon Bedrock</li>
       </ul>
 
-      And more! As I said before, my focus is always fixing the problem, so
-      every tool needed will be learned and used.
+      And more! As I said before, my focus is always fixing the problem, so any
+      tool needed will be learned and used.
     </p>
 
     <p>
@@ -59,49 +59,3 @@ import BaseLayout from "@layouts/BaseLayout.astro";
     </p>
   </section>
 </BaseLayout>
-
-<style>
-  .buttons-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    gap: 2rem;
-    margin: 1rem 0;
-  }
-
-  .buttons-container .index-button {
-    width: 80%;
-    padding: 1.5rem 0;
-    font-size: var(--fontSize2);
-  }
-
-  @media (min-width: 476px) {
-    .buttons-container .index-button {
-      width: 60%;
-    }
-
-    .buttons-container {
-      gap: 3rem;
-    }
-  }
-
-  @media (min-width: 700px) {
-    .buttons-container .index-button {
-      width: 40%;
-    }
-
-    .buttons-container {
-      flex-direction: row;
-      gap: 0;
-      margin: 0;
-    }
-  }
-
-  @media (min-width: 75rem) {
-    .buttons-container .index-button {
-      font-size: 5.5rem;
-      padding: 3rem 0;
-    }
-  }
-</style>
