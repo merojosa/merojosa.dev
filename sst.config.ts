@@ -9,7 +9,7 @@ export default {
     };
   },
   stacks(app) {
-    app.stack(function Site({ stack }) {
+    app.stack(function Astro({ stack }) {
       const site = new AstroSite(stack, "personal-website");
       stack.addOutputs({
         url: site.url,

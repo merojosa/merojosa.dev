@@ -8,8 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "sst:dev": "sst bind astro dev",
-    "sst:deploy": "sst deploy"
+    "deploy": "sst deploy --stage prod"
   },
   "dependencies": {
     "@fontsource/open-sans": "^5.0.27",
