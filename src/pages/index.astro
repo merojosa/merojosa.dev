@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-
-const pageTitle = "Jose Andrés Mejías Rojas";
 ---
 
 <BaseLayout
@@ -9,35 +7,60 @@ const pageTitle = "Jose Andrés Mejías Rojas";
   pageDescription="Jose Andres' personal website"
 >
   <section class="root">
-    <header>
-      <h1>{pageTitle}</h1>
-    </header>
+    <p>Hey! I'm Jose Andrés.</p>
 
-    <div class="subtitles-container">
-      <span>Software Engineer</span>
-      <span>Researcher</span>
-      <span>University Professor</span>
-    </div>
+    <p>
+      I love solving problems. I think we software developers are intended to
+      fix problems, not create new ones! That means that there is always one or
+      more tools for the job, but in the end, the most important thing is the
+      problem we are solving. That's why I'm always open to explore new or old
+      tools for the job.
+    </p>
+
+    <p>
+      These is what I'm currently enthusiast of:
+      <ul>
+        <li>
+          JavaScript ecosystem: React, Node.js, Next.js, React Native, Svelte,
+          SvelteKit
+        </li>
+        <li>
+          Software Engineering: Monorepos, Databases design, architecture
+          design, design patterns
+        </li>
+        <li>
+          Amazon Web Services (AWS): AWS Lambda, ECS, Fargate, Elastic
+          Beanstalk, Infrastructure as Code (Serverless Framework, SST,
+          CloudFormation).
+        </li>
+        <li>Machine Learning: Python, Deep Learning, YOLO, Amazon Bedrock</li>
+      </ul>
+
+      And more! As I said before, my focus is always fixing the problem, so
+      every tool needed will be learned and used.
+    </p>
+
+    <p>
+      Currently I'm working at
+      <a href="http://firstfactory.com/">First Factory</a> as a software engineer
+      and at <a href="https://www.ucr.ac.cr/">University of Costa Rica</a> as professor
+      and researcher.
+    </p>
+
+    <p>
+      I also have a side project that is work in progress: Agenda Cultural CR.
+      It's a website that gathers cultural activities (theather, dancing,
+      concerts, etc...) in Costa Rica. I'm going to give you one last fun fact
+      about me: I did theater in my university days. That's why I'm passionate
+      about cultural/art stuff, and I'd love people to be able to watch more of
+      this wonderful world. Going back to the tech topic, it's built with
+      SvelteKit and SST using AWS Lambda. Yeap, although I have more experience
+      with React, I love Svelte even more 😅
+    </p>
   </section>
 </BaseLayout>
 
 <style>
-  h1 {
-    font-size: var(--fontSize2);
-    text-align: center;
-  }
-
-  .subtitles-container {
-    font-size: var(--fontSize1);
-    text-align: center;
-    margin: 1.5rem 0;
-  }
-
-  .subtitles-container > span::after {
-    content: "\a";
-    white-space: pre;
-  }
-
   .buttons-container {
     display: flex;
     justify-content: space-around;
@@ -51,16 +74,6 @@ const pageTitle = "Jose Andrés Mejías Rojas";
     width: 80%;
     padding: 1.5rem 0;
     font-size: var(--fontSize2);
-  }
-
-  @media (min-width: 400px) {
-    h1 {
-      font-size: var(--fontSize3);
-    }
-
-    .subtitles-container {
-      font-size: var(--fontSize2);
-    }
   }
 
   @media (min-width: 476px) {
@@ -78,10 +91,6 @@ const pageTitle = "Jose Andrés Mejías Rojas";
       width: 40%;
     }
 
-    .subtitles-container {
-      margin: 2.5rem 0;
-    }
-
     .buttons-container {
       flex-direction: row;
       gap: 0;
@@ -89,21 +98,7 @@ const pageTitle = "Jose Andrés Mejías Rojas";
     }
   }
 
-  @media (min-width: 900px) {
-    .subtitles-container > span::after {
-      content: " - ";
-    }
-
-    .subtitles-container > span:last-child::after {
-      content: unset;
-    }
-  }
-
   @media (min-width: 75rem) {
-    h1 {
-      font-size: var(--fontSize5);
-    }
-
     .buttons-container .index-button {
       font-size: 5.5rem;
       padding: 3rem 0;
