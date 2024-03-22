@@ -15,10 +15,10 @@ const { pageTitle, pageDescription } = Astro.props;
 const layoutSpace = "18rem";
 
 // Colors
-const primaryColor = "#16232c"; // Dark one
 const secondaryColor = "#C04A4A"; // Red one
 const secondaryColorLighter = "#EB5C5C"; // Lighter red one
 const thirdColor = "#FFF"; // White one
+const backgroundColor = "#0e161c"; // Dark one
 
 // Fonts
 const fontSize5 = "6rem";
@@ -48,7 +48,7 @@ const borderRadius = "1rem";
       is:global
       define:vars={{
         layoutSpace,
-        primaryColor,
+        backgroundColor,
         secondaryColor,
         secondaryColorLighter,
         thirdColor,
@@ -82,7 +82,7 @@ const borderRadius = "1rem";
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
         grid-template-areas: "header" "main" "footer";
-        background-color: var(--primaryColor);
+        background-color: var(--backgroundColor);
         font-family: "Open Sans", sans-serif;
         overflow-x: hidden;
       }
