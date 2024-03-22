@@ -10,25 +10,6 @@ type Props = {
 };
 
 const { pageTitle, pageDescription } = Astro.props;
-
-// Spacing
-const layoutSpace = "18rem";
-
-// Colors
-const secondaryColor = "#C04A4A"; // Red one
-const secondaryColorLighter = "#EB5C5C"; // Lighter red one
-const thirdColor = "#FFF"; // White one
-const backgroundColor = "#0e161c"; // Dark one
-
-// Fonts
-const fontSize5 = "6rem";
-const fontSize4 = "4rem";
-const fontSize3 = "3rem";
-const fontSize2 = "2rem";
-const fontSize1 = "1.5rem";
-
-// Border Radius
-const borderRadius = "1rem";
 ---
 
 <html lang="en">
@@ -43,141 +24,27 @@ const borderRadius = "1rem";
 
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
-
-    <style
-      is:global
-      define:vars={{
-        layoutSpace,
-        backgroundColor,
-        secondaryColor,
-        secondaryColorLighter,
-        thirdColor,
-        fontSize5,
-        fontSize4,
-        fontSize3,
-        fontSize2,
-        fontSize1,
-        borderRadius,
-      }}
-    >
-      * {
-        color: var(--thirdColor);
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        margin: 0;
-      }
-    </style>
-
-    <style>
-      body {
-        all: unset;
-        min-height: 100vh;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr auto;
-        grid-template-areas: "header" "main" "footer";
-        background-color: var(--backgroundColor);
-        font-family: "Open Sans", sans-serif;
-        overflow-x: hidden;
-      }
-
-      header {
-        grid-area: header;
-        width: 100vw;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-      }
-
-      header > h1 {
-        font-size: var(--fontSize3);
-        text-align: center;
-      }
-
-      main {
-        grid-area: main;
-        margin: 1rem;
-      }
-
-      footer {
-        grid-area: footer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        margin: 2rem 1rem;
-        justify-content: space-around;
-        gap: 1rem;
-      }
-
-      footer.icons-container > a {
-        display: flex;
-        width: 35px;
-      }
-
-      footer.icons-container > a:hover {
-        opacity: 0.6;
-      }
-
-      @media (min-width: 400px) {
-        header > nav > ul {
-          font-size: var(--fontSize1);
-        }
-      }
-
-      @media (min-width: 700px) {
-        main {
-          margin: 1rem 3rem;
-        }
-      }
-
-      @media (min-width: 75rem) {
-        header > nav {
-          padding-left: var(--layoutSpace);
-          padding-right: var(--layoutSpace);
-          padding-top: 1.5rem;
-          padding-bottom: 1.5rem;
-        }
-
-        header > nav > ul {
-          font-size: var(--fontSize2);
-        }
-
-        main {
-          width: 75rem;
-          margin: 2rem auto;
-        }
-
-        footer {
-          gap: 2rem;
-          margin: 2rem;
-          justify-content: center;
-        }
-
-        footer > p {
-          font-size: var(--fontSize1);
-        }
-      }
-    </style>
   </head>
-  <body>
-    <header>
-      <h1>{pageTitle}</h1>
-    </header>
+  <body class="bg-slate-800 *:text-white overflow-x-hidden">
     <main>
       <slot />
     </main>
 
-    <footer class="icons-container">
-      <a href="https://github.com/merojosa/" target="_blank">
+    <footer
+      class="flex w-9 h-8 justify-center items-center my-8 mx-4 [&>*>*]:h-12"
+    >
+      <a
+        href="https://github.com/merojosa/"
+        target="_blank"
+        class="hover:opacity-60"
+      >
         <Github />
       </a>
-      <a href="https://www.linkedin.com/in/merojosa/" target="_blank">
+      <a
+        href="https://www.linkedin.com/in/merojosa/"
+        target="_blank"
+        class="hover:opacity-60"
+      >
         <LinkedIn />
       </a>
     </footer>
