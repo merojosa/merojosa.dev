@@ -15,7 +15,7 @@ import MachineLearningLogo from "@components/icons/MachineLearning.astro";
   pageDescription="Jose Andrés' personal website"
 >
   <section>
-    <div class="text-center pb-24">
+    <div class="text-center">
       <header>
         <h1 class="text-5xl">Jose Andrés Mejías</h1>
         <p class="pt-3">
@@ -40,10 +40,12 @@ import MachineLearningLogo from "@components/icons/MachineLearning.astro";
       </div>
     </div>
 
-    <h2 class="text-3xl">These are what I'm currently enthusiast of:</h2>
+    <h2 class="text-3xl pb-4 pt-24">
+      These are what I'm currently enthusiast of:
+    </h2>
 
     <div
-      class="grid grid-cols-2 gap-4 py-6 [&>*>svg]:h-6 [&>*>svg]:w-6 [&>*>svg]:absolute [&>*>svg]:-left-8 [&>*>svg]:top-1"
+      class="grid grid-cols-2 gap-4 [&>*>svg]:h-6 [&>*>svg]:w-6 [&>*>svg]:absolute [&>*>svg]:-left-8 [&>*>svg]:top-1"
     >
       <div class="relative">
         <JSLogo />
@@ -106,6 +108,17 @@ import MachineLearningLogo from "@components/icons/MachineLearning.astro";
       </div>
     </div>
 
-    <h2 class="text-3xl">And these is my side project:</h2>
+    <h2 class="text-3xl pb-4 pt-24">I also have a side project!</h2>
+    <p>
+      <a href="https://github.com/merojosa/agenda-cultural-cr"
+        >Agenda Cultural CR</a
+      >: It's a website that gathers cultural activities weekly (theather,
+      dancing, concerts, etc...) in Costa Rica. I'm going to give you one last
+      fun fact about me: I did theater in my university days. That's why I'm
+      passionate about culture and art, and I'd love people to be able to see
+      more of this wonderful world. Going back to the tech topic, it's built
+      with SvelteKit and SST using AWS Lambda. Yeap, although I have more
+      experience with React, I love Svelte even more 😅
+    </p>
   </section>
 </BaseLayout>
