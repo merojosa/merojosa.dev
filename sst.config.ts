@@ -11,7 +11,7 @@ export default {
 	},
 	stacks(app) {
 		app.stack(function Astro({ stack }) {
-			const site = new AstroSite(stack, 'personal-website', {
+			new AstroSite(stack, 'personal-website', {
 				customDomain: {
 					domainName: 'jose-andres.dev',
 					domainAlias: 'www.jose-andres.dev',
@@ -38,8 +38,9 @@ export default {
 					},
 				},
 			});
+
 			stack.addOutputs({
-				url: site.url,
+				url: "https://jose-andres.dev",
 			});
 		});
 	},
