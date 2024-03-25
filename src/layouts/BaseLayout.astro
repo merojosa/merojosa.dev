@@ -1,54 +1,44 @@
 ---
-import "@fontsource/poppins";
+import '@fontsource/poppins';
 
-import Github from "@components/icons/Github.astro";
-import LinkedIn from "@components/icons/LinkedIn.astro";
+import Github from '@components/icons/Github.astro';
+import LinkedIn from '@components/icons/LinkedIn.astro';
 
 type Props = {
-  pageTitle: string;
-  pageDescription: string;
+	pageTitle: string;
+	pageDescription: string;
 };
 
 const { pageTitle, pageDescription } = Astro.props;
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+	<head>
+		<meta charset="utf-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
 
-    <title>{pageTitle}</title>
-    <meta name="description" content={pageDescription} />
-  </head>
-  <body
-    class="bg-slate-800 *:text-white overflow-x-hidden flex flex-col gap-10"
-  >
-    <main class="mx-[10vw] py-8">
-      <slot />
-    </main>
+		<title>{pageTitle}</title>
+		<meta name="description" content={pageDescription} />
+	</head>
+	<body class="flex flex-col gap-10 overflow-x-hidden bg-slate-800 *:text-white">
+		<main class="mx-[10vw] py-8">
+			<slot />
+		</main>
 
-    <footer
-      class="flex justify-center items-center gap-3 py-6 [&>*>*]:h-8 border-t-[1px] border-gray-600"
-    >
-      <a
-        href="https://github.com/merojosa/"
-        target="_blank"
-        class="hover:opacity-60"
-      >
-        <Github />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/merojosa/"
-        target="_blank"
-        class="hover:opacity-60"
-      >
-        <LinkedIn />
-      </a>
-    </footer>
-  </body>
+		<footer
+			class="flex items-center justify-center gap-3 border-t-[1px] border-gray-600 py-6 [&>*>*]:h-8"
+		>
+			<a href="https://github.com/merojosa/" target="_blank" class="hover:opacity-60">
+				<Github />
+			</a>
+			<a href="https://www.linkedin.com/in/merojosa/" target="_blank" class="hover:opacity-60">
+				<LinkedIn />
+			</a>
+		</footer>
+	</body>
 </html>
