@@ -16,7 +16,6 @@ export default {
           domainName: "jose-andres.dev",
           domainAlias: "www.jose-andres.dev"
         },
-        memorySize: '1024 MB',
         runtime: "nodejs20.x",
         nodejs: {
           esbuild: {
