@@ -1,5 +1,5 @@
 ---
-import "@fontsource/open-sans";
+import "@fontsource/poppins";
 
 import Github from "@components/icons/Github.astro";
 import LinkedIn from "@components/icons/LinkedIn.astro";
@@ -25,13 +25,15 @@ const { pageTitle, pageDescription } = Astro.props;
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
   </head>
-  <body class="bg-slate-800 *:text-white overflow-x-hidden">
-    <main>
+  <body
+    class="bg-slate-800 *:text-white overflow-x-hidden flex flex-col gap-10"
+  >
+    <main class="mx-[10vw] py-8">
       <slot />
     </main>
 
     <footer
-      class="flex w-9 h-8 justify-center items-center my-8 mx-4 [&>*>*]:h-12"
+      class="flex justify-center items-center gap-3 py-6 [&>*>*]:h-8 border-t-[1px] border-gray-600"
     >
       <a
         href="https://github.com/merojosa/"

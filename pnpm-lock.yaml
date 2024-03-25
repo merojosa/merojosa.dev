@@ -8,9 +8,9 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.1.0
     version: 5.1.0(astro@4.5.9)(tailwindcss@3.4.1)
-  '@fontsource/open-sans':
-    specifier: ^5.0.27
-    version: 5.0.27
+  '@fontsource/poppins':
+    specifier: ^5.0.12
+    version: 5.0.12
   astro:
     specifier: ^4.5.9
     version: 4.5.9(typescript@5.4.3)
@@ -2209,8 +2209,8 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@fontsource/open-sans@5.0.27:
-    resolution: {integrity: sha512-tFTqx2TE9srmM3pMEHldw0lTglqhKwFX6PVDEL0OF9xNT0x5W9brsezFHhV/U36pQV9So7S0vo4yVpnLzBBQew==}
+  /@fontsource/poppins@5.0.12:
+    resolution: {integrity: sha512-0qzBxtIJLh82iMJ9pCXKYwGs1zyS+jyUmwVJ59+JdYnEaFVkDsxVOk9yDWfVOs14ALUneodU2m5YSGma6dCYCw==}
     dev: false
 
   /@graphql-tools/executor@0.0.18(graphql@16.8.1):

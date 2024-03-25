@@ -1,6 +1,13 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
 import "../styles/global.css";
+import personalPicture from "../assets/picture.jpeg";
+import JSLogo from "@components/icons/JS.astro";
+import AWSLogo from "@components/icons/AWS.astro";
+import OpenSourceLogo from "@components/icons/OpenSource.astro";
+import EngineeringLogo from "@components/icons/Engineering.astro";
+import MachineLearningLogo from "@components/icons/MachineLearning.astro";
 ---
 
 <BaseLayout
@@ -8,27 +15,38 @@ import "../styles/global.css";
   pageDescription="Jose Andrés' personal website"
 >
   <section>
-    <header>
-      <h1 class="text-5xl">Jose Andrés Mejías</h1>
-    </header>
+    <div class="text-center pb-24">
+      <header>
+        <h1 class="text-5xl">Jose Andrés Mejías</h1>
+        <p class="pt-3">
+          Hey! I'm Jose Andrés, a software engineer from Costa Rica 🇨🇷
+        </p>
+      </header>
 
-    <h2>Hey! I'm Jose Andrés. I'm a software engineer from Costa Rica 🇨🇷</h2>
-
-    <div>
-      <img src="test" />
-      <p>
-        I'm also a university professor and a researcher. I love teaching, video
-        games, soccer, theather, and reading. In my free time, I also love to
-        code for my side projects or just for fun. I genuinely think learning is
-        part of having fun as well.
-      </p>
+      <div class="flex items-center justify-center w-1/2 mx-auto pt-6 gap-4">
+        <Image
+          src={personalPicture}
+          class="rounded-md"
+          height={300}
+          alt="Picture of Jose Andrés."
+        />
+        <p class="text-left">
+          I'm also a university professor and a researcher. I love teaching,
+          video games, soccer, theather, and reading. In my free time, I also
+          love to code for my side projects or just for fun. I genuinely think
+          learning is part of having fun as well.
+        </p>
+      </div>
     </div>
 
-    <p>This is what I'm currently enthusiast of:</p>
+    <h2 class="text-3xl">This is what I'm currently enthusiast of:</h2>
 
-    <div>
-      <div>
-        <h3>JavaScript ecosystem</h3>
+    <div
+      class="grid grid-cols-2 gap-4 py-6 [&>*>svg]:h-6 [&>*>svg]:w-6 [&>*>svg]:absolute [&>*>svg]:-left-8 [&>*>svg]:top-1"
+    >
+      <div class="relative">
+        <JSLogo />
+        <h3 class="text-xl font-bold">JavaScript ecosystem</h3>
         <ul>
           <li>React</li>
           <li>Node.js</li>
@@ -39,8 +57,9 @@ import "../styles/global.css";
         </ul>
       </div>
 
-      <div>
-        <h3>Amazon Web Services (AWS)</h3>
+      <div class="relative">
+        <h3 class="text-xl font-bold">Amazon Web Services (AWS)</h3>
+        <AWSLogo />
         <ul>
           <li>AWS Lambda</li>
           <li>ECS</li>
@@ -52,8 +71,9 @@ import "../styles/global.css";
         </ul>
       </div>
 
-      <div>
-        <h3>Machine Learning</h3>
+      <div class="relative">
+        <MachineLearningLogo />
+        <h3 class="text-xl font-bold">Machine Learning</h3>
         <ul>
           <li>Python</li>
           <li>Deep Learning</li>
@@ -62,8 +82,9 @@ import "../styles/global.css";
         </ul>
       </div>
 
-      <div>
-        <h3>Software Engineering</h3>
+      <div class="relative">
+        <EngineeringLogo />
+        <h3 class="text-xl font-bold">Software Engineering</h3>
         <ul>
           <li>Databases Design</li>
           <li>Architecture Design</li>
@@ -73,16 +94,15 @@ import "../styles/global.css";
         </ul>
       </div>
 
-      <div>
-        <h3>Open Source</h3>
+      <div class="relative">
+        <h3 class="text-xl font-bold">Open Source</h3>
+        <OpenSourceLogo />
         <p>
-          I love the Open Source ecosystem. I already made some contributions
-          here and there but my goal for the next years is to be able to
-          contribute to projects that I'm exciting for.
+          I love Open Source. I already made some contributions here and there
+          but my goal for the next years is to be able to contribute to projects
+          that I'm exciting for.
         </p>
       </div>
-
-      <p>And more!</p>
     </div>
   </section>
 </BaseLayout>
