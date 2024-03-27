@@ -15,7 +15,7 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 		<div class="text-center">
 			<header>
 				<h1 class="text-3xl md:text-5xl">Jose Andrés Mejías</h1>
-				<p class="pt-3">Hey! I'm Jose Andrés, a software engineer from Costa Rica 🇨🇷</p>
+				<p class="pt-3 text-xl">Hey! I'm Jose Andrés, a software engineer from Costa Rica 🇨🇷</p>
 			</header>
 
 			<div
@@ -28,7 +28,7 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 					alt="Picture of Jose Andrés."
 					draggable="false"
 				/>
-				<p class="text-left">
+				<p class="text-left text-lg">
 					I'm also a university professor and a researcher. I love teaching, video games, soccer,
 					theather, and reading. In my free time, I also love to code for my side projects or just
 					for fun. I genuinely think learning is part of having fun as well.
@@ -36,17 +36,16 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			</div>
 		</div>
 
-		<h2 class="pb-2 pt-12 text-2xl md:pt-20 md:text-3xl">
+		<h2 class="pb-2 pt-12 text-2xl md:pt-20 md:text-4xl">
 			These are what I'm currently enthusiast of
 		</h2>
-
 		<div
 			class="grid grid-cols-1 gap-4 pl-8 md:grid-cols-2 md:pl-0 [&>*>svg]:absolute [&>*>svg]:-left-8 [&>*>svg]:top-1 [&>*>svg]:h-6 [&>*>svg]:w-6"
 		>
 			<div class="relative">
 				<JSLogo />
-				<h3 class="pb-1 text-xl font-bold">JavaScript ecosystem</h3>
-				<ul>
+				<h3 class="pb-1 text-xl font-bold md:text-2xl">JavaScript ecosystem</h3>
+				<ul class="text-lg md:text-xl">
 					<li>React</li>
 					<li>Node.js</li>
 					<li>Next.js</li>
@@ -57,9 +56,9 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			</div>
 
 			<div class="relative">
-				<h3 class="pb-1 text-lg font-bold md:text-xl">Amazon Web Services (AWS)</h3>
+				<h3 class="pb-1 text-xl font-bold md:text-2xl">Amazon Web Services (AWS)</h3>
 				<AWSLogo />
-				<ul>
+				<ul class="text-lg md:text-xl">
 					<li>AWS Lambda</li>
 					<li>ECS</li>
 					<li>Fargate</li>
@@ -70,8 +69,8 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 
 			<div class="relative">
 				<MachineLearningLogo />
-				<h3 class="pb-1 text-lg font-bold md:text-xl">AI/Machine Learning</h3>
-				<ul>
+				<h3 class="pb-1 text-xl font-bold md:text-2xl">AI/Machine Learning</h3>
+				<ul class="text-lg md:text-xl">
 					<li>Python</li>
 					<li>Deep Learning</li>
 					<li>YOLO</li>
@@ -81,8 +80,8 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 
 			<div class="relative">
 				<EngineeringLogo />
-				<h3 class="pb-1 text-lg font-bold md:text-xl">Software Engineering</h3>
-				<ul>
+				<h3 class="pb-1 text-xl font-bold md:text-2xl">Software Engineering</h3>
+				<ul class="text-lg md:text-xl">
 					<li>Databases Design</li>
 					<li>Architecture Design</li>
 					<li>Design Patterns</li>
@@ -92,23 +91,23 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			</div>
 
 			<div class="relative">
-				<h3 class="pb-1 text-lg font-bold md:text-xl">Open Source</h3>
+				<h3 class="pb-1 text-xl font-bold md:text-2xl">Open Source</h3>
 				<OpenSourceLogo />
-				<p>
+				<p class="text-lg md:text-xl">
 					I love Open Source! I already made some contributions here and there but my goal for the
 					next years is to be able to contribute to projects that I'm exciting for.
 				</p>
 			</div>
 		</div>
 
-		<h2 class="pb-2 pt-12 text-2xl md:pt-20 md:text-3xl">I also have a side project!</h2>
+		<h2 class="pb-2 pt-12 text-2xl md:pt-20 md:text-4xl">I also have a side project!</h2>
 
-		<h3 class="w-fit text-lg font-bold hover:underline md:text-xl">
+		<h3 class="w-fit text-xl font-bold hover:underline md:text-2xl">
 			<a href="https://github.com/merojosa/agenda-cultural-cr" target="_blank"
 				>Agenda Cultural CR 🎭</a
 			>
 		</h3>
-		<p class="leading-8">
+		<p class="text-lg !leading-8 md:text-xl">
 			It's a website that gathers cultural activities weekly (theater, dancing, concerts, etc...) in
 			Costa Rica. I'm going to give you one last fun fact about me: I was a theater kid back in my
 			university days. That's why I'm passionate about culture and art, and I'd love people to be
@@ -117,11 +116,11 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			love Svelte even more 😅
 		</p>
 
-		<h2 class="pb-2 pt-12 text-2xl md:pt-20 md:text-3xl">Professional experience</h2>
-		<p class="flex flex-row text-2xl">
+		<h2 class="pb-2 pt-12 text-2xl md:pt-20 md:text-4xl">Professional experience</h2>
+		<p class="flex flex-row text-lg md:text-xl">
 			If you want to know about my career,&nbsp;<a
 				href="https://linkedin.com/in/merojosa"
-				class="w-fit text-2xl underline hover:text-blue-400"
+				class="w-fit underline hover:text-blue-400"
 				target="_blank"
 			>
 				check out my LinkedIn
