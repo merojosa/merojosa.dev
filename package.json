@@ -8,7 +8,7 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"deploy": "sst deploy --stage prod"
+		"deploy": "npx sst deploy --stage prod"
 	},
 	"dependencies": {
 		"@astrojs/tailwind": "^5.1.0",
