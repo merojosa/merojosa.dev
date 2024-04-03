@@ -2,7 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import '../styles/global.css';
-import personalPicture from '../assets/picture.jpeg';
+import personalPicture from '../assets/picture.jpg';
 import JSLogo from '@components/icons/JS.astro';
 import AWSLogo from '@components/icons/AWS.astro';
 import OpenSourceLogo from '@components/icons/OpenSource.astro';
@@ -23,7 +23,7 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			>
 				<Image
 					src={personalPicture}
-					class="w-full rounded-md md:w-auto"
+					class="w-full rounded-sm md:w-auto"
 					height={400}
 					alt="Picture of Jose Andrés."
 					draggable="false"
@@ -45,7 +45,7 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			<div class="relative">
 				<JSLogo />
 				<h3 class="pb-1 text-xl font-bold md:text-2xl">JavaScript ecosystem</h3>
-				<ul class="text-lg md:text-xl">
+				<ul class="text-lg !leading-6 md:text-xl [&>li]:pb-3">
 					<li>React</li>
 					<li>Node.js</li>
 					<li>Next.js</li>
@@ -58,7 +58,7 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			<div class="relative">
 				<h3 class="pb-1 text-xl font-bold md:text-2xl">Amazon Web Services (AWS)</h3>
 				<AWSLogo />
-				<ul class="text-lg md:text-xl">
+				<ul class="text-lg !leading-6 md:text-xl [&>li]:pb-3">
 					<li>AWS Lambda</li>
 					<li>ECS</li>
 					<li>Fargate</li>
@@ -70,7 +70,7 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			<div class="relative">
 				<MachineLearningLogo />
 				<h3 class="pb-1 text-xl font-bold md:text-2xl">AI/Machine Learning</h3>
-				<ul class="text-lg md:text-xl">
+				<ul class="text-lg !leading-6 md:text-xl [&>li]:pb-3">
 					<li>Python</li>
 					<li>Deep Learning</li>
 					<li>YOLO</li>
@@ -81,7 +81,7 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			<div class="relative">
 				<EngineeringLogo />
 				<h3 class="pb-1 text-xl font-bold md:text-2xl">Software Engineering</h3>
-				<ul class="text-lg md:text-xl">
+				<ul class="text-lg !leading-6 md:text-xl [&>li]:pb-3">
 					<li>Databases Design</li>
 					<li>Architecture Design</li>
 					<li>Design Patterns</li>
@@ -117,14 +117,13 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 		</p>
 
 		<h2 class="pb-2 pt-12 text-2xl md:pt-20 md:text-4xl">Professional experience</h2>
-		<p class="flex flex-row text-lg md:text-xl">
-			If you want to know about my career,&nbsp;<a
+		<p class="text-lg md:text-xl">
+			If you want to know about my career,
+			<a
 				href="https://linkedin.com/in/merojosa"
-				class="w-fit underline hover:text-blue-400"
-				target="_blank"
+				class="underline hover:text-blue-400"
+				target="_blank">check out my LinkedIn</a
 			>
-				check out my LinkedIn
-			</a>
 		</p>
 	</section>
 </BaseLayout>
