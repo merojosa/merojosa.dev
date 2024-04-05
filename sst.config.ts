@@ -37,7 +37,7 @@ export default {
 			});
 
 			stack.addOutputs({
-				url: "https://jose-andres.dev",
+				url: "https://merojosa.dev",
 			});
 		});
 	},
