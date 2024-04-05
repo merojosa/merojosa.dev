@@ -18,14 +18,15 @@ export default {
 						external: ['sharp'], // Ensures Sharp is excluded from the code bundle.
 					},
 				},
+				customDomain: {
+					domainName: "merojosa.dev",
+					domainAlias: "www.merojosa.dev"
+				},
 				cdk: {
 					server: {
 						layers: [
 							new aws_lambda.LayerVersion(this, 'sharp', {
-								/**
-								 * This is a prebuilt layer for sharp.
-								 * Source: https://github.com/pH200/sharp-layer
-								 */
+								// https://github.com/pH200/sharp-layer
 								code: aws_lambda.Code.fromAsset('./layers/sharp.zip'),
 								compatibleRuntimes: [aws_lambda.Runtime.NODEJS_20_X],
 								compatibleArchitectures: [aws_lambda.Architecture.ARM_64],
