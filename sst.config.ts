@@ -12,10 +12,6 @@ export default {
 	stacks(app) {
 		app.stack(function Astro({ stack }) {
 			new AstroSite(stack, 'personal-website', {
-				customDomain: {
-					domainName: 'jose-andres.dev',
-					domainAlias: 'www.jose-andres.dev',
-				},
 				runtime: 'nodejs20.x',
 				nodejs: {
 					esbuild: {
