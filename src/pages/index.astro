@@ -29,15 +29,15 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 					draggable="false"
 				/>
 				<p class="text-left text-lg">
-					I'm also a university professor and a researcher. I love teaching, video games, soccer,
-					theather, and reading. In my free time, I also love to code for my side projects or just
-					for fun. I genuinely think learning is part of having fun as well.
+					I'm also a university professor and researcher. I love teaching, video games, soccer,
+					theater, and reading. In my free time, if I'm not with my family, I'm coding for my side
+					projects and learning.
 				</p>
 			</div>
 		</div>
 
-		<h2 class="pb-2 pt-12 text-2xl md:pt-20 md:text-4xl">
-			These are what I'm currently enthusiast of
+		<h2 class="pb-6 pt-12 text-2xl md:pt-20 md:text-4xl">
+			These are the technologies I'm using right now
 		</h2>
 		<div
 			class="grid grid-cols-1 gap-4 pl-8 md:grid-cols-2 md:pl-0 [&>*>svg]:absolute [&>*>svg]:-left-8 [&>*>svg]:top-[2px] [&>*>svg]:h-6 [&>*>svg]:w-6 sm:[&>*>svg]:top-1"
@@ -45,7 +45,7 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			<div class="relative">
 				<JSLogo />
 				<h3 class="pb-1 text-xl font-bold md:text-2xl">JavaScript ecosystem</h3>
-				<ul class="text-lg !leading-6 md:text-xl [&>li]:pb-3">
+				<ul class="text-lg !leading-6 [&>li]:pb-3">
 					<li>React</li>
 					<li>Node.js</li>
 					<li>Next.js</li>
@@ -58,7 +58,7 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			<div class="relative">
 				<h3 class="pb-1 text-xl font-bold md:text-2xl">Amazon Web Services (AWS)</h3>
 				<AWSLogo />
-				<ul class="text-lg !leading-6 md:text-xl [&>li]:pb-3">
+				<ul class="text-lg !leading-6 [&>li]:pb-3">
 					<li>AWS Lambda</li>
 					<li>ECS</li>
 					<li>Fargate</li>
@@ -70,7 +70,7 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			<div class="relative">
 				<MachineLearningLogo />
 				<h3 class="pb-1 text-xl font-bold md:text-2xl">AI/Machine Learning</h3>
-				<ul class="text-lg !leading-6 md:text-xl [&>li]:pb-3">
+				<ul class="text-lg !leading-6 [&>li]:pb-3">
 					<li>Python</li>
 					<li>Deep Learning</li>
 					<li>YOLO</li>
@@ -81,7 +81,7 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			<div class="relative">
 				<EngineeringLogo />
 				<h3 class="pb-1 text-xl font-bold md:text-2xl">Software Engineering</h3>
-				<ul class="text-lg !leading-6 md:text-xl [&>li]:pb-3">
+				<ul class="text-lg !leading-6 [&>li]:pb-3">
 					<li>Databases Design</li>
 					<li>Architecture Design</li>
 					<li>Design Patterns</li>
@@ -93,36 +93,48 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			<div class="relative">
 				<h3 class="pb-1 text-xl font-bold md:text-2xl">Open Source</h3>
 				<OpenSourceLogo />
-				<p class="text-lg md:text-xl">
-					I love Open Source! I've been sponsoring the <a
+				<p class="text-lg">
+					I love Open Source! I've been making small contributions to open source projects. My goal
+					is to contribute even more in the future. I've been also sponsoring the <a
 						class="underline"
 						href="https://opencollective.com/svelte"
 						target="_blank">Svelte</a
 					> and <a class="underline" href="https://github.com/sponsors/vitejs" target="_blank"
 						>Vite</a
-					> projects for quite some time. However, my goal for the following years is to be able to contribute
-					to projects I'm excited for with not only money but also with pull requests.
+					> projects for quite some time.
 				</p>
 			</div>
 		</div>
 
-		<h2 class="pb-2 pt-12 text-2xl md:pt-20 md:text-4xl">I also have a side project!</h2>
+		<h2 class="pb-6 pt-12 text-2xl md:pt-20 md:text-4xl">
+			Cool projects I'm working on in my free time
+		</h2>
 
-		<h3 class="w-fit text-xl font-bold hover:underline md:text-2xl">
-			<a href="https://github.com/merojosa/agenda-cultural-cr" target="_blank"
-				>Agenda Cultural CR 🎭</a
-			>
-		</h3>
-		<p class="text-lg !leading-8 md:text-xl">
-			It's a website that gathers cultural activities weekly (theater, dancing, concerts, etc...) in
-			Costa Rica. I'm going to give you one last fun fact about me: I was a theater kid back in my
-			university days. That's why I'm passionate about culture and art, and I'd love people to be
-			able to see more of this wonderful world. Going back to the tech topic, it's built with
-			SvelteKit and SST using AWS Lambda. Yeap, although I have way more experience with React, I
-			love Svelte even more 😅
-		</p>
+		<div class="flex flex-col gap-8">
+			<div>
+				<h3 class="w-fit text-xl font-bold md:text-2xl">Organizer 📅</h3>
+				<p class="text-lg !leading-8 md:text-xl">
+					An agenda for ADHD people using React Native (mobile), SvelteKit (web), and Go (backend).
+					My vision for this app is to be as accessible as possible for people who struggle to
+					remember important events in their lives. As an ADHD person myself, I've been in trouble
+					remembering birthdays, family activities, and even at what time I need to wake up
+					tomorrow! That's why I'm used to apps such as Google Calendar. However, I feel these apps
+					could be way better.
+				</p>
+			</div>
 
-		<h2 class="pb-2 pt-12 text-2xl md:pt-20 md:text-4xl">Professional experience</h2>
+			<div>
+				<h3 class="w-fit text-xl font-bold md:text-2xl">Recetalias 👩‍🍳</h3>
+				<p class="text-lg !leading-8 md:text-xl">
+					A collection of curated recipes from Natalia Díaz that provides a customized search by
+					ingredient or text. The website allows Natalia to manage the entire content, so she can
+					create, delete, and edit any recipe or ingredient. The website is made with SvelteKit and
+					Postgres. AWS is used for the infrastructure.
+				</p>
+			</div>
+		</div>
+
+		<h2 class="pb-6 pt-12 text-2xl md:pt-20 md:text-4xl">Professional experience</h2>
 		<p class="text-lg md:text-xl">
 			If you want to know about my career,
 			<a
