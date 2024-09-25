@@ -41,4 +41,4 @@ jobs:
           role-duration-seconds: 1000
           aws-region: us-east-1
       - name: Deploy to AWS
-        run: pnpm run deploy
+        run: pnpx sst deploy --stage production

@@ -1,29 +1,29 @@
 {
-	"name": "merojosa.dev",
-	"private": true,
-	"type": "module",
-	"version": "1.0.0",
-	"scripts": {
-		"dev": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro",
-		"deploy": "sst deploy --stage prod"
-	},
-	"dependencies": {
-		"@astrojs/tailwind": "^5.1.0",
-		"@fontsource/inter": "^5.1.0",
-		"astro": "^4.15.6",
-		"tailwindcss": "^3.4.12"
-	},
-	"devDependencies": {
-		"astro-sst": "2.41.4",
-		"aws-cdk-lib": "2.132.1",
-		"constructs": "10.3.0",
-		"prettier": "^3.3.3",
-		"prettier-plugin-astro": "^0.14.1",
-		"prettier-plugin-tailwindcss": "^0.6.6",
-		"sst": "2.41.4",
-		"typescript": "^5.6.2"
-	}
+  "name": "merojosa-website",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/inter": "^5.1.0",
+    "astro": "^4.15.6",
+    "astro-sst": "2.43.5",
+    "sst": "3.1.38",
+    "tailwindcss": "^3.4.12"
+  },
+  "devDependencies": {
+    "astro-sst": "2.43.5",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "sst": "3.1.38",
+    "typescript": "^5.6.2"
+  }
 }
