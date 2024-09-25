@@ -31,14 +31,23 @@ const { pageTitle, pageDescription } = Astro.props;
 		</main>
 
 		<footer
-			class="flex items-center justify-center gap-3 border-t-[1px] border-gray-600 py-6 [&>*>*]:h-8"
+			class="flex flex-col items-center justify-center gap-4 border-t-[1px] border-gray-600 py-6 [&>*>*]:h-8"
 		>
-			<a href="https://github.com/merojosa/" target="_blank" class="hover:opacity-60">
-				<Github />
-			</a>
-			<a href="https://www.linkedin.com/in/merojosa/" target="_blank" class="hover:opacity-60">
-				<LinkedIn />
-			</a>
+			<p>
+				Want to know how I built this site? <a
+					class="underline"
+					href="https://github.com/merojosa/merojosa.dev"
+					target="_blank">Check it out!</a
+				>
+			</p>
+			<div class="flex items-center justify-center gap-3 [&>*>*]:h-8">
+				<a href="https://github.com/merojosa/" target="_blank" class="hover:opacity-60">
+					<Github />
+				</a>
+				<a href="https://www.linkedin.com/in/merojosa/" target="_blank" class="hover:opacity-60">
+					<LinkedIn />
+				</a>
+			</div>
 		</footer>
 	</body>
 </html>
