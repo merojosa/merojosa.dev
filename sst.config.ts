@@ -6,6 +6,11 @@ export default $config({
       name: "merojosa-website",
       removal: input?.stage === "production" ? "retain" : "remove",
       home: "aws",
+      providers: {
+        aws: {
+          version: "6.52.0"
+        }
+      }
     };
   },
   async run() {
