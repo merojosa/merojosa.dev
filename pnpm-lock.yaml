@@ -17,9 +17,6 @@ importers:
       astro:
         specifier: ^4.15.6
         version: 4.15.6(@types/node@20.11.17)(rollup@4.21.3)(typescript@5.6.2)
-      astro-sst:
-        specifier: 2.43.5
-        version: 2.43.5
       sst:
         specifier: 3.1.38
         version: 3.1.38
@@ -27,6 +24,9 @@ importers:
         specifier: ^3.4.12
         version: 3.4.12
     devDependencies:
+      astro-sst:
+        specifier: 2.43.5
+        version: 2.43.5
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
