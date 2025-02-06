@@ -11,14 +11,14 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 
 <BaseLayout pageTitle="Jose Andrés Mejías" pageDescription="Jose Andrés' personal website">
 	<section>
-		<div class="text-center">
+		<div class="flex flex-col items-center gap-6 text-center">
 			<header>
 				<h1 class="text-3xl md:text-5xl">Jose Andrés Mejías</h1>
 				<p class="pt-3 text-xl">Hey! I'm Jose Andrés, a software engineer from Costa Rica 🇨🇷</p>
 			</header>
 
 			<div
-				class="mx-auto flex w-full flex-col items-center justify-center gap-4 pt-6 sm:w-3/4 md:w-full md:flex-row"
+				class="mx-auto flex w-full flex-col items-center justify-center gap-4 sm:w-3/4 md:w-full md:flex-row"
 			>
 				<Image
 					src={personalPicture}
@@ -33,6 +33,11 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 					projects and learning.
 				</p>
 			</div>
+
+			<a
+				class="w-full rounded-md bg-white py-3 text-2xl font-bold text-black hover:opacity-80 md:w-1/4"
+				href="/resume">Resume</a
+			>
 		</div>
 
 		<h2 class="pb-6 pt-12 text-2xl md:pt-20 md:text-4xl">
