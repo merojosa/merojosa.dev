@@ -9,6 +9,6 @@ export default $config({
     };
   },
   async run() {
-    new sst.aws.Astro("astro-site", { domain: "merojosa.dev", });
+    new sst.aws.Astro("astro-site", { domain: "merojosa.dev", server: { install: ["sharp"] } });
   },
 });
