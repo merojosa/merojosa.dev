@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
-import '../styles/global.css';
 import personalPicture from '../assets/picture.jpg';
 import JSLogo from '@components/icons/JS.astro';
 import AWSLogo from '@components/icons/AWS.astro';
@@ -136,12 +135,8 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 
 		<h2 class="pb-6 pt-12 text-2xl md:pt-20 md:text-4xl">Professional experience</h2>
 		<p class="text-lg md:text-xl">
-			If you want to know about my career,
-			<a
-				href="https://linkedin.com/in/merojosa"
-				class="underline hover:text-blue-400"
-				target="_blank">check out my LinkedIn</a
-			>
+			If you want to know more about my career,
+			<a href="/resume" class="underline hover:text-blue-400">check out my resume</a>.
 		</p>
 	</section>
 </BaseLayout>
