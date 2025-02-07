@@ -1,0 +1,39 @@
+---
+type Props = {
+	title: string;
+	experiences: {
+		title: string;
+		company: string;
+		location: string;
+		period: string;
+		responsibilities: string[];
+	}[];
+};
+
+const { title, experiences } = Astro.props;
+---
+
+<article class="flex flex-col gap-3">
+	<h2 class="border-b pb-1 text-3xl">{title}</h2>
+	{
+		experiences.map((experience) => (
+			<section class="flex flex-col gap-1">
+				<div class="flex items-center">
+					<div class="flex-1">
+						<h3 class="text-xl font-extrabold">{experience.title}</h3>
+						<p>{experience.company}</p>
+					</div>
+					<div class="text-right">
+						<p>{experience.location}</p>
+						<p>{experience.period}</p>
+					</div>
+				</div>
+				<ul class="list-disc">
+					{experience.responsibilities.map((responsibility) => (
+						<li>{responsibility}</li>
+					))}
+				</ul>
+			</section>
+		))
+	}
+</article>

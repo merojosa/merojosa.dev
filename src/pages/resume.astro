@@ -1,4 +1,5 @@
 ---
+import ResumeSection from '@components/icons/ResumeSection.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
@@ -9,76 +10,45 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 	<section class="flex flex-col gap-8">
 		<h1 class="text-center text-4xl">Jose Andrés Mejías</h1>
 
-		<article class="flex flex-col gap-3">
-			<h2 class="border-b pb-1 text-3xl">Experience</h2>
-
-			<section class="flex flex-col gap-1">
-				<div class="flex items-center">
-					<div class="flex-1">
-						<h3 class="text-xl font-extrabold">Software Engineer</h3>
-						<p>First Factory</p>
-					</div>
-					<div class="text-right">
-						<p>Heredia, Costa Rica</p>
-						<p>Jan 2021 - Present</p>
-					</div>
-				</div>
-				<ul class="list-disc">
-					<li>Full stack developer in new and legacy projects</li>
-					<li>
-						Developed web applications with technologies such as React, Node.js, AWS, Azure,
-						GraphQL, SQL, Python and React Native, among others.
-					</li>
-					<li>Performed backlog grooming with clients.</li>
-					<li>Co-managed a project and designed requested features.</li>
-					<li>Refactored legacy code and migrated features to new technologies.</li>
-				</ul>
-			</section>
-
-			<section class="flex flex-col gap-1">
-				<div class="flex items-center">
-					<div class="flex-1">
-						<h3 class="text-xl font-extrabold">Research Professor</h3>
-						<p>CITIC, UCR</p>
-					</div>
-					<div class="text-right">
-						<p>San José, Costa Rica</p>
-						<p>Mar 2023 - Present</p>
-					</div>
-				</div>
-				<ul class="list-disc">
-					<li>Developed an automated system that can detect unhealthy ads</li>
-					<li>
-						Created and processed a dataset with junk food images and their respective classes
-					</li>
-					<li>
-						Implemented and trained a Deep Learning model to automatically detect junk food images
-						using Python and YOLOv8
-					</li>
-				</ul>
-			</section>
-
-			<section class="flex flex-col gap-1">
-				<div class="flex items-center">
-					<div class="flex-1">
-						<h3 class="text-xl font-extrabold">Web Development Co-Instructor</h3>
-						<p>Programa de Asesorías, Actualización y Capacitación Computacional, ECCI, UCR</p>
-					</div>
-					<div class="text-right">
-						<p>San José, Costa Rica</p>
-						<p>Feb 2023 - Mar 2023</p>
-					</div>
-				</div>
-
-				<ul class="list-disc">
-					<li>Designed front end development workshop for 3 weeks.</li>
-					<li>
-						Taught HTML, CSS, JavaScript, frameworks, meta-frameworks, React, client side rendering,
-						server side rendering, among others.
-					</li>
-				</ul>
-			</section>
-		</article>
+		<ResumeSection
+			title="Experience"
+			experiences={[
+				{
+					title: 'Software Engineer',
+					company: 'First Factory',
+					location: 'Heredia, Costa Rica',
+					period: 'Jan 2021 - Present',
+					responsibilities: [
+						'Full stack developer in new and legacy projects',
+						'Developed web applications with technologies such as React, Node.js, AWS, Azure, GraphQL, SQL, Python and React Native, among others.',
+						'Performed backlog grooming with clients.',
+						'Co-managed a project and designed requested features.',
+						'Refactored legacy code and migrated features to new technologies.',
+					],
+				},
+				{
+					title: 'Research Professor',
+					company: 'CITIC, UCR',
+					location: 'San José, Costa Rica',
+					period: 'Mar 2023 - Present',
+					responsibilities: [
+						'Developed an automated system that can detect unhealthy ads',
+						'Created and processed a dataset with junk food images and their respective classes',
+						'Implemented and trained a Deep Learning model to automatically detect junk food images using Python and YOLOv8',
+					],
+				},
+				{
+					title: 'Web Development Co-Instructor',
+					company: 'Programa de Asesorías, Actualización y Capacitación Computacional, ECCI, UCR',
+					location: 'San José, Costa Rica',
+					period: 'Feb 2023 - Mar 2023',
+					responsibilities: [
+						'Designed front end development workshop for 3 weeks.',
+						'Taught HTML, CSS, JavaScript, frameworks, meta-frameworks, React, client side rendering, server side rendering, among others.',
+					],
+				},
+			]}
+		/>
 
 		<!-- <article>
 			<h2>Projects</h2>
