@@ -1,5 +1,4 @@
 ---
-import ResumeSection from '@components/icons/ResumeSection.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
@@ -7,65 +6,101 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 	pageTitle="Jose Andrés' resume"
 	pageDescription="Hi there! I'm Jose Andrés and this is my resume. You can check my experience, the technical skills I have and my ongoing side projects."
 >
-	<section class="flex flex-col gap-8">
+	<section class="flex flex-col gap-6">
 		<h1 class="text-center text-4xl">Jose Andrés Mejías</h1>
 
-		<ResumeSection
-			title="Experience"
-			experiences={[
-				{
-					title: 'Software Engineer',
-					company: 'First Factory',
-					location: 'Heredia, Costa Rica',
-					period: 'Jan 2021 - Present',
-					responsibilities: [
-						'Full stack developer in new and legacy projects',
-						'Developed web applications with technologies such as React, Node.js, AWS, Azure, GraphQL, SQL, Python and React Native, among others.',
-						'Performed backlog grooming with clients.',
-						'Co-managed a project and designed requested features.',
-						'Refactored legacy code and migrated features to new technologies.',
-					],
-				},
-				{
-					title: 'Research Professor',
-					company: 'CITIC, UCR',
-					location: 'San José, Costa Rica',
-					period: 'Mar 2023 - Present',
-					responsibilities: [
-						'Developed an automated system that can detect unhealthy ads',
-						'Created and processed a dataset with junk food images and their respective classes',
-						'Implemented and trained a Deep Learning model to automatically detect junk food images using Python and YOLOv8',
-					],
-				},
-				{
-					title: 'Web Development Co-Instructor',
-					company: 'Programa de Asesorías, Actualización y Capacitación Computacional, ECCI, UCR',
-					location: 'San José, Costa Rica',
-					period: 'Feb 2023 - Mar 2023',
-					responsibilities: [
-						'Designed front end development workshop for 3 weeks.',
-						'Taught HTML, CSS, JavaScript, frameworks, meta-frameworks, React, client side rendering, server side rendering, among others.',
-					],
-				},
-			]}
-		/>
+		<article class="flex flex-col gap-3">
+			<h2 class="border-b pb-1 text-3xl">Experience</h2>
+			<section class="flex flex-col gap-1">
+				<div class="flex items-center">
+					<div class="flex-1">
+						<h3 class="text-xl font-extrabold">Software Engineer</h3>
+						<p>First Factory</p>
+					</div>
+					<div class="text-right">
+						<p>Heredia, Costa Rica</p>
+						<p>Jan 2021 - Present</p>
+					</div>
+				</div>
+				<ul class="list-disc">
+					{
+						[
+							'Full stack developer in new and legacy projects',
+							'Developed web applications with technologies such as React, Node.js, AWS, Azure, GraphQL, SQL, Python and React Native, among others.',
+							'Performed backlog grooming with clients.',
+							'Co-managed a project and designed requested features.',
+							'Refactored legacy code and migrated features to new technologies.',
+						].map((responsibility) => <li>{responsibility}</li>)
+					}
+				</ul>
+			</section>
 
-		<!-- <article>
-			<h2>Projects</h2>
+			<section class="flex flex-col gap-1">
+				<div class="flex items-center">
+					<div class="flex-1">
+						<h3 class="text-xl font-extrabold">Research Professor</h3>
+						<p>CITIC, UCR</p>
+					</div>
+					<div class="text-right">
+						<p>San José, Costa Rica</p>
+						<p>Mar 2023 - Present</p>
+					</div>
+				</div>
+				<ul class="list-disc">
+					{
+						[
+							'Developed an automated system that can detect unhealthy ads',
+							'Created and processed a dataset with junk food images and their respective classes',
+							'Implemented and trained a Deep Learning model to automatically detect junk food images using Python and YOLOv8',
+						].map((responsibility) => <li>{responsibility}</li>)
+					}
+				</ul>
+			</section>
 
-			<section>
-				<h3>Organizer</h3>
-				<p>React Native, TypeScript, SvelteKit, Go | Jul 2023 – Present</p>
-				<ul>
+			<section class="flex flex-col gap-1">
+				<div class="flex items-center">
+					<div class="flex-1">
+						<h3 class="text-xl font-extrabold">Web Development Co-Instructor</h3>
+						<p>Programa de Asesorías, Actualización y Capacitación Computacional, ECCI, UCR</p>
+					</div>
+					<div class="text-right">
+						<p>San José, Costa Rica</p>
+						<p>Feb 2023 - Mar 2023</p>
+					</div>
+				</div>
+				<ul class="list-disc">
+					{
+						[
+							'Designed front end development workshop for 3 weeks.',
+							'Taught HTML, CSS, JavaScript, frameworks, meta-frameworks, React, client side rendering, server side rendering, among others.',
+						].map((responsibility) => <li>{responsibility}</li>)
+					}
+				</ul>
+			</section>
+		</article>
+
+		<article class="flex flex-col gap-3">
+			<h2 class="border-b pb-1 text-3xl">Projects</h2>
+
+			<section class="flex flex-col gap-1">
+				<h3 class="text-xl font-extrabold">Organizer</h3>
+				<div class="flex items-center">
+					<p class="flex-1">React Native, TypeScript, SvelteKit, Go</p>
+					<p>Jul 2023 - Present</p>
+				</div>
+				<ul class="list-disc">
 					<li>Agenda for people with ADHD</li>
 					<li>Focused on people who have trouble remembering important events</li>
 				</ul>
 			</section>
 
-			<section>
-				<h3>Unhealthy Food Detection</h3>
-				<p>Python, YOLO, Deep Learning | Mar 2023 – Present</p>
-				<ul>
+			<section class="flex flex-col gap-1">
+				<h3 class="text-xl font-extrabold">Unhealthy Food Detection</h3>
+				<div class="flex items-center">
+					<p class="flex-1">Python, YOLO, Deep Learning</p>
+					<p>Mar 2023 - Present</p>
+				</div>
+				<ul class="list-disc">
 					<li>
 						Multidisciplinary effort (nutrition and computer science) to detect and classify
 						unhealthy food ads
@@ -80,27 +115,35 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 			</section>
 		</article>
 
-		<article>
-			<h2>Education/Certification</h2>
+		<article class="flex flex-col gap-3">
+			<h2 class="border-b pb-1 text-3xl">Education/Certification</h2>
 
-			<section>
-				<h3>Amazon Web Services (AWS)</h3>
-				<p>AWS Certified Cloud Practitioner | San José, Costa Rica, 2024</p>
-				<p>Credential ID: 3NJ97G1B5NE41VC7</p>
+			<section class="flex flex-col gap-1">
+				<h3 class="text-xl font-extrabold">AWS Certified Cloud Practitioner</h3>
+				<div class="flex items-center">
+					<p class="flex-1">Credential ID: 3NJ97G1B5NE41VC7</p>
+					<p>2024</p>
+				</div>
 			</section>
 
-			<section>
-				<h3>University of Costa Rica</h3>
-				<p>Master's degree, Computer Science | San José, Costa Rica, 2021 - Present</p>
+			<section class="flex flex-col gap-1">
+				<h3 class="text-xl font-extrabold">Master's degree, Computer Science</h3>
+				<div class="flex items-center">
+					<p class="flex-1">University of Costa Rica</p>
+					<p>2021 - Present</p>
+				</div>
 			</section>
 
-			<section>
-				<h3>University of Costa Rica</h3>
-				<p>Bachelor's degree, Computer Software Engineering | San José, Costa Rica, 2015 - 2020</p>
+			<section class="flex flex-col gap-1">
+				<h3 class="text-xl font-extrabold">Bachelor's degree, Software Engineering</h3>
+				<div class="flex items-center">
+					<p class="flex-1">University of Costa Rica</p>
+					<p>2015 - 2020</p>
+				</div>
 			</section>
 		</article>
 
-		<article>
+		<!-- <article>
 			<h2>Technical skills</h2>
 
 			<section>
