@@ -6,7 +6,9 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 	pageTitle="Jose Andrés' resume"
 	pageDescription="Hi there! I'm Jose Andrés and this is my resume. You can check my experience, the technical skills I have and my ongoing side projects."
 >
-	<section class="flex flex-col gap-6">
+	<section id="resume" class="flex flex-col gap-6">
+		<button id="resume-button">Download Resume</button>
+
 		<article>
 			<h1 class="text-center text-4xl">Jose Andrés Mejías</h1>
 			<div class="flex items-center justify-center gap-2">
@@ -19,7 +21,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 		</article>
 
 		<article class="flex flex-col gap-3">
-			<h2 class="border-b pb-1 text-3xl">Skills</h2>
+			<h2 class="border-b-2 pb-1 text-3xl">Skills</h2>
 
 			<ul class="list-disc">
 				<li>
@@ -42,7 +44,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 		</article>
 
 		<article class="flex flex-col gap-3">
-			<h2 class="border-b pb-1 text-3xl">Experience</h2>
+			<h2 class="border-b-2 pb-1 text-3xl">Experience</h2>
 			<section class="flex flex-col gap-1">
 				<div class="flex items-center">
 					<div class="flex-1">
@@ -112,7 +114,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 		</article>
 
 		<article class="flex flex-col gap-3">
-			<h2 class="border-b pb-1 text-3xl">Projects</h2>
+			<h2 class="border-b-2 pb-1 text-3xl">Projects</h2>
 
 			<section class="flex flex-col gap-1">
 				<h3 class="text-xl font-extrabold">Organizer</h3>
@@ -147,7 +149,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 		</article>
 
 		<article class="flex flex-col gap-3">
-			<h2 class="border-b pb-1 text-3xl">Education/Certification</h2>
+			<h2 class="border-b-2 pb-1 text-3xl">Education/Certification</h2>
 
 			<section class="flex flex-col gap-1">
 				<h3 class="text-xl font-extrabold">AWS Certified Cloud Practitioner</h3>
@@ -175,3 +177,32 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 		</article>
 	</section>
 </BaseLayout>
+
+<style>
+	@media print {
+		#resume-button {
+			display: none;
+		}
+
+		#resume {
+			padding: 10mm;
+		}
+
+		@page {
+			margin: 0;
+			size: auto;
+		}
+
+		h2 {
+			border-color: black;
+		}
+	}
+</style>
+
+<script>
+	document.getElementById('resume-button')?.addEventListener('click', printResume);
+
+	function printResume() {
+		window.print();
+	}
+</script>

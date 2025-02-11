@@ -42,4 +42,12 @@ const { pageTitle, pageDescription } = Astro.props;
 			</a>
 		</footer>
 	</body>
+
+	<style>
+		@media print {
+			footer {
+				display: none;
+			}
+		}
+	</style>
 </html>
