@@ -184,7 +184,32 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 		}
 
 		#resume {
-			padding: 10mm;
+			gap: 0px;
+		}
+
+		* {
+			font-size: 12px;
+		}
+
+		h1 {
+			font-size: 18px;
+		}
+
+		h2 {
+			font-size: 16px;
+			padding: 0px;
+		}
+
+		h3 {
+			font-size: 14px;
+		}
+
+		article {
+			gap: 0px;
+		}
+
+		section {
+			gap: 0px;
 		}
 
 		@page {
@@ -202,6 +227,13 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 	document.getElementById('resume-button')?.addEventListener('click', printResume);
 
 	function printResume() {
-		window.print();
+		const element = document.querySelector('#resume > article > div > p');
+		if (element) {
+			const textContent = element.textContent;
+			const email = textContent?.replace(' [at] ', '@').replace(' [dot] ', '.');
+			element.textContent = email ?? textContent;
+			window.print();
+			element.textContent = textContent;
+		}
 	}
 </script>
