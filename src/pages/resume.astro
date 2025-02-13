@@ -12,7 +12,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 		<article>
 			<h1 class="text-center text-4xl">Jose Andrés Mejías</h1>
 			<div class="flex items-center justify-center gap-2">
-				<p class="underline">jose.andresmr [at] hotmail [dot] com</p> |
+				<a class="underline" href="mailto:jose.andresmr@hotmail.com">jose.andresmr@hotmail.com</a> |
 				<a class="underline" href="https://www.linkedin.com/in/merojosa/"
 					>https://www.linkedin.com/in/merojosa/</a
 				> |
@@ -189,6 +189,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
 		* {
 			font-size: 12px;
+			color: black;
 		}
 
 		h1 {
@@ -224,16 +225,5 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 </style>
 
 <script>
-	document.getElementById('resume-button')?.addEventListener('click', printResume);
-
-	function printResume() {
-		const element = document.querySelector('#resume > article > div > p');
-		if (element) {
-			const textContent = element.textContent;
-			const email = textContent?.replace(' [at] ', '@').replace(' [dot] ', '.');
-			element.textContent = email ?? textContent;
-			window.print();
-			element.textContent = textContent;
-		}
-	}
+	document.getElementById('resume-button')?.addEventListener('click', () => window.print());
 </script>
