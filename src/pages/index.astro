@@ -11,7 +11,7 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 
 <BaseLayout pageTitle="Jose Andrés Mejías" pageDescription="Jose Andrés' personal website">
 	<section>
-		<div class="text-center">
+		<article class="text-center">
 			<header>
 				<h1 class="text-3xl md:text-5xl">Jose Andrés Mejías</h1>
 				<p class="pt-3 text-xl">Hey! I'm Jose Andrés, a software engineer from Costa Rica 🇨🇷</p>
@@ -22,121 +22,133 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			>
 				<Image
 					src={personalPicture}
-					class="w-full rounded-sm md:w-auto"
+					class="w-full rounded-xl md:w-auto"
 					height={400}
 					alt="Picture of Jose Andrés."
 					draggable="false"
 				/>
 				<p class="text-left text-lg">
 					I'm also a university professor and researcher. I love teaching, video games, soccer,
-					theater, and reading. In my free time, if I'm not with my family, I'm coding for my side
+					theater, and reading. In my free time, if I'm not with my family, I'm working on my side
 					projects and learning.
 				</p>
+				<p></p>
 			</div>
-		</div>
+		</article>
 
-		<h2 class="pb-6 pt-12 text-2xl md:pt-20 md:text-4xl">
-			These are the technologies I'm using right now
-		</h2>
-		<div
-			class="grid grid-cols-1 gap-4 pl-8 md:grid-cols-2 md:pl-0 [&>*>svg]:absolute [&>*>svg]:-left-8 [&>*>svg]:top-[2px] [&>*>svg]:h-6 [&>*>svg]:w-6 sm:[&>*>svg]:top-1"
-		>
-			<div class="relative">
-				<JSLogo />
-				<h3 class="pb-1 text-xl font-bold md:text-2xl">JavaScript ecosystem</h3>
-				<ul class="text-lg !leading-6 [&>li]:pb-3">
-					<li>React</li>
-					<li>Node.js</li>
-					<li>Next.js</li>
-					<li>React Native</li>
-					<li>Svelte</li>
-					<li>SvelteKit</li>
-				</ul>
+		<article>
+			<h2 class="pb-4 pt-12 text-2xl md:pt-20 md:text-4xl">
+				These are the technologies I'm using right now
+			</h2>
+			<div
+				class="grid grid-cols-1 gap-4 pl-8 md:grid-cols-2 md:pl-0 [&>*>svg]:absolute [&>*>svg]:-left-8 [&>*>svg]:top-[2px] [&>*>svg]:h-6 [&>*>svg]:w-6 sm:[&>*>svg]:top-1"
+			>
+				<div class="relative">
+					<JSLogo />
+					<h3 class="pb-1 text-xl font-bold md:text-2xl">JavaScript ecosystem</h3>
+					<ul class="text-lg !leading-6 [&>li]:pb-3">
+						<li>React</li>
+						<li>Node.js</li>
+						<li>Next.js</li>
+						<li>React Native</li>
+						<li>Svelte</li>
+						<li>SvelteKit</li>
+					</ul>
+				</div>
+
+				<div class="relative">
+					<h3 class="pb-1 text-xl font-bold md:text-2xl">Amazon Web Services (AWS)</h3>
+					<AWSLogo />
+					<ul class="text-lg !leading-6 [&>li]:pb-3">
+						<li>AWS Lambda</li>
+						<li>ECS</li>
+						<li>Fargate</li>
+						<li>Elastic Beanstalk</li>
+						<li>Infrastructure as Code (Serverless Framework, SST, CloudFormation)</li>
+					</ul>
+				</div>
+
+				<div class="relative">
+					<MachineLearningLogo />
+					<h3 class="pb-1 text-xl font-bold md:text-2xl">AI/Machine Learning</h3>
+					<ul class="text-lg !leading-6 [&>li]:pb-3">
+						<li>Python</li>
+						<li>Deep Learning</li>
+						<li>YOLO</li>
+						<li>Amazon Bedrock</li>
+					</ul>
+				</div>
+
+				<div class="relative">
+					<EngineeringLogo />
+					<h3 class="pb-1 text-xl font-bold md:text-2xl">Software Engineering</h3>
+					<ul class="text-lg !leading-6 [&>li]:pb-3">
+						<li>Database Design & Optimization</li>
+						<li>Architecture Design</li>
+						<li>Design Patterns</li>
+						<li>Agile Methodologies</li>
+						<li>Monorepos</li>
+					</ul>
+				</div>
+
+				<div class="relative">
+					<h3 class="pb-1 text-xl font-bold md:text-2xl">Open Source</h3>
+					<OpenSourceLogo />
+					<p class="text-lg">
+						I love Open Source! I've made small contributions to open source projects. My goal is to
+						contribute even more in the future. I've also been sponsoring the <a
+							class="underline"
+							href="https://opencollective.com/svelte"
+							target="_blank">Svelte</a
+						> and <a class="underline" href="https://github.com/sponsors/vitejs" target="_blank"
+							>Vite</a
+						> projects for quite some time.
+					</p>
+				</div>
 			</div>
+		</article>
 
-			<div class="relative">
-				<h3 class="pb-1 text-xl font-bold md:text-2xl">Amazon Web Services (AWS)</h3>
-				<AWSLogo />
-				<ul class="text-lg !leading-6 [&>li]:pb-3">
-					<li>AWS Lambda</li>
-					<li>ECS</li>
-					<li>Fargate</li>
-					<li>Elastic Beanstalk</li>
-					<li>Infrastructure as Code (Serverless Framework, SST, CloudFormation)</li>
-				</ul>
+		<article>
+			<h2 class="pb-4 pt-12 text-2xl md:pt-20 md:text-4xl">
+				Cool projects I'm working on in my free time
+			</h2>
+
+			<div class="flex flex-col gap-4">
+				<div>
+					<h3 class="w-fit text-xl font-bold md:text-2xl">Organizer 📅</h3>
+					<p class="text-lg !leading-8 md:text-xl">
+						An agenda for people with ADHD using React Native (mobile), SvelteKit (web) and Go
+						(backend). My vision for this app is to make it as accessible as possible for people who
+						have trouble remembering important life events. Having ADHD myself, I've struggled to
+						remember birthdays, family activities, and even what time I was supposed to wake up!
+						That's why I'm used to apps like Google Calendar. However, sometimes these apps fail me
+						(or I fail them, I'm not sure). That's why I'm exploring how to improve this kind of
+						apps.
+					</p>
+				</div>
+
+				<div>
+					<h3 class="w-fit text-xl font-bold md:text-2xl">Recetalias 👩‍🍳</h3>
+					<p class="text-lg !leading-8 md:text-xl">
+						A collection of curated recipes from Natalia Díaz, with customizable search by
+						ingredient or text. The site allows Natalia to manage all content, so she can create,
+						delete, and edit any recipe or ingredient. The website is being built with SvelteKit and
+						Postgres. AWS is used for the infrastructure.
+					</p>
+				</div>
 			</div>
+		</article>
 
-			<div class="relative">
-				<MachineLearningLogo />
-				<h3 class="pb-1 text-xl font-bold md:text-2xl">AI/Machine Learning</h3>
-				<ul class="text-lg !leading-6 [&>li]:pb-3">
-					<li>Python</li>
-					<li>Deep Learning</li>
-					<li>YOLO</li>
-					<li>Amazon Bedrock</li>
-				</ul>
-			</div>
-
-			<div class="relative">
-				<EngineeringLogo />
-				<h3 class="pb-1 text-xl font-bold md:text-2xl">Software Engineering</h3>
-				<ul class="text-lg !leading-6 [&>li]:pb-3">
-					<li>Databases Design</li>
-					<li>Architecture Design</li>
-					<li>Design Patterns</li>
-					<li>Agile Methodologies</li>
-					<li>Monorepos</li>
-				</ul>
-			</div>
-
-			<div class="relative">
-				<h3 class="pb-1 text-xl font-bold md:text-2xl">Open Source</h3>
-				<OpenSourceLogo />
-				<p class="text-lg">
-					I love Open Source! I've made small contributions to open source projects. My goal is to
-					contribute even more in the future. I've also been sponsoring the <a
-						class="underline"
-						href="https://opencollective.com/svelte"
-						target="_blank">Svelte</a
-					> and <a class="underline" href="https://github.com/sponsors/vitejs" target="_blank"
-						>Vite</a
-					> projects for quite some time.
-				</p>
-			</div>
-		</div>
-
-		<h2 class="pb-6 pt-12 text-2xl md:pt-20 md:text-4xl">
-			Cool projects I'm working on in my free time
-		</h2>
-
-		<div class="flex flex-col gap-4">
-			<div>
-				<h3 class="w-fit text-xl font-bold md:text-2xl">Organizer 📅</h3>
-				<p class="text-lg !leading-8 md:text-xl">
-					An agenda for people with ADHD using React Native (mobile), SvelteKit (web) and Go
-					(backend). My vision for this app is to make it as accessible as possible for people who
-					have trouble remembering important life events. Having ADHD myself, I've struggled to
-					remember birthdays, family activities, and even what time I was supposed to wake up!
-					That's why I'm used to apps like Google Calendar. However, sometimes these apps fail me
-					(or I fail them, I'm not sure). That's why I'm exploring how to improve this kind of apps.
-				</p>
-			</div>
-
-			<div>
-				<h3 class="w-fit text-xl font-bold md:text-2xl">Recetalias 👩‍🍳</h3>
-				<p class="text-lg !leading-8 md:text-xl">
-					A collection of curated recipes from Natalia Díaz, with customizable search by ingredient
-					or text. The site allows Natalia to manage all content, so she can create, delete, and
-					edit any recipe or ingredient. The website is being built with SvelteKit and Postgres. AWS
-					is used for the infrastructure.
-				</p>
-			</div>
-		</div>
-
-		<h2 class="pb-6 pt-12 text-2xl md:pt-20 md:text-4xl">Professional experience</h2>
-		<p class="text-lg md:text-xl">
-			If you want to know more about my career,
-			<a href="/resume" class="underline hover:text-blue-400">check out my resume</a>.
-		</p>
+		<article>
+			<h2 class="pb-4 pt-12 text-2xl md:pt-20 md:text-4xl">Professional experience</h2>
+			<p class="text-lg md:text-xl">
+				If you want to know more about my career,
+				<a
+					href="https://www.linkedin.com/in/merojosa/"
+					class="underline hover:text-blue-400"
+					target="_blank">check out my resume</a
+				>.
+			</p>
+		</article>
 	</section>
 </BaseLayout>
