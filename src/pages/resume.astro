@@ -1,4 +1,5 @@
 ---
+import Pdf from '@components/icons/Pdf.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
@@ -7,7 +8,8 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 	pageDescription="Hi there! I'm Jose Andrés and this is my resume. You can check my experience, the technical skills I have and my ongoing side projects."
 >
 	<section id="resume" class="flex flex-col gap-6">
-		<button id="resume-button">Download Resume</button>
+		<button id="resume-button" class="ml-auto h-10 w-10 fill-white hover:opacity-60"><Pdf /></button
+		>
 
 		<article>
 			<h1 class="text-center text-4xl">Jose Andrés Mejías</h1>
