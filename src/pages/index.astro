@@ -7,6 +7,7 @@ import AWSLogo from '@components/icons/AWS.astro';
 import OpenSourceLogo from '@components/icons/OpenSource.astro';
 import EngineeringLogo from '@components/icons/Engineering.astro';
 import MachineLearningLogo from '@components/icons/MachineLearning.astro';
+import Right from '@components/icons/Right.astro';
 ---
 
 <BaseLayout pageTitle="Jose Andrés Mejías" pageDescription="Jose Andrés' personal website">
@@ -32,8 +33,12 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 					theater, and reading. In my free time, if I'm not with my family, I'm working on my side
 					projects and learning.
 				</p>
-				<p></p>
 			</div>
+			<a
+				href="/resume"
+				class="flex items-center gap-2 rounded-lg border border-white bg-transparent p-6 text-2xl font-bold *:h-10 *:fill-white hover:opacity-75"
+				>Check out my resume <Right /></a
+			>
 		</article>
 
 		<article>
@@ -143,7 +148,7 @@ import MachineLearningLogo from '@components/icons/MachineLearning.astro';
 			<h2 class="pb-4 pt-12 text-2xl md:pt-20 md:text-4xl">Professional experience</h2>
 			<p class="text-lg md:text-xl">
 				If you want to know more about my career,
-				<a href="/resume" class="underline hover:text-blue-400">check out my resume</a>.
+				<a href="/resume" class="underline hover:text-blue-400">here's my resume</a>.
 			</p>
 		</article>
 	</section>
