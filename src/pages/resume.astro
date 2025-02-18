@@ -1,4 +1,5 @@
 ---
+import Left from '@components/icons/Left.astro';
 import Pdf from '@components/icons/Pdf.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 ---
@@ -8,8 +9,18 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 	pageDescription="Hi there! I'm Jose Andrés and this is my resume. You can check my experience, the technical skills I have and my ongoing side projects."
 >
 	<section id="resume" class="flex flex-col gap-6">
-		<button id="resume-button" class="ml-auto h-10 w-10 fill-white hover:opacity-60"><Pdf /></button
-		>
+		<div id="top-section" class="flex items-center justify-between">
+			<a
+				class="flex items-center gap-2 text-xl font-bold *:h-6 *:fill-white hover:underline"
+				href="/"
+			>
+				<Left />
+				Main page
+			</a>
+			<button id="resume-button" class="h-10 w-10 fill-white *:h-full *:w-full hover:opacity-60">
+				<Pdf />
+			</button>
+		</div>
 
 		<article>
 			<h1 class="text-center text-4xl">Jose Andrés Mejías</h1>
@@ -181,7 +192,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
 <style>
 	@media print {
-		#resume-button {
+		#top-section {
 			display: none;
 		}
 
