@@ -22,13 +22,13 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 			</button>
 		</div>
 
-		<article>
-			<h1 class="text-center text-4xl">Jose Andrés Mejías</h1>
-			<div class="flex items-center justify-center gap-2">
-				<a class="underline" href="mailto:jose.andresmr@hotmail.com">jose.andresmr@hotmail.com</a> |
+		<article id="contact-section">
+			<h1 class="pb-3 text-center text-4xl md:pb-1">Jose Andrés Mejías</h1>
+			<div class="flex flex-col items-center justify-center gap-1 md:flex-row md:gap-4">
+				<a class="underline" href="mailto:jose.andresmr@hotmail.com">jose.andresmr@hotmail.com</a>
 				<a class="underline" href="https://www.linkedin.com/in/merojosa/"
 					>https://www.linkedin.com/in/merojosa/</a
-				> |
+				>
 				<a class="underline" href="https://merojosa.dev/">https://merojosa.dev/</a>
 			</div>
 		</article>
@@ -198,6 +198,10 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
 		#resume {
 			gap: 0px;
+		}
+
+		#contact-section > div {
+			flex-direction: row;
 		}
 
 		* {
