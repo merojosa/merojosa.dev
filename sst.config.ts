@@ -11,8 +11,8 @@ export default $config({
   async run() {
     new sst.aws.Astro("astro-site", {
       domain: {
-        name: "merojosa.dev", redirects:
-          ["www.merojosa.dev"]
+        name: "merojosa.dev",
+        redirects: ["www.merojosa.dev"]
       }, server: { install: ["sharp"] }
     });
   },
