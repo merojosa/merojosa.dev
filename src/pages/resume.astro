@@ -17,9 +17,13 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 				<Left />
 				Main page
 			</a>
-			<button id="resume-button" class="h-10 w-10 fill-white *:h-full *:w-full hover:opacity-60">
+			<a
+				href="/resume.pdf"
+				download="Jose_Andres_Mejias_Resume.pdf"
+				class="h-10 w-10 fill-white *:h-full *:w-full hover:opacity-60"
+			>
 				<Pdf />
-			</button>
+			</a>
 		</div>
 
 		<article id="contact-section">
@@ -240,7 +244,3 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 		}
 	}
 </style>
-
-<script>
-	document.getElementById('resume-button')?.addEventListener('click', () => window.print());
-</script>

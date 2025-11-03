@@ -13,7 +13,7 @@ export default $config({
       domain: {
         name: "merojosa.dev",
         redirects: ["www.merojosa.dev"]
-      }, server: { install: ["sharp"] }
+      }
     });
   },
 });
