@@ -6,6 +6,7 @@
 - **Build**: `pnpm build`
 - **Preview**: `pnpm preview`
 - **Format**: `npx prettier --write .`
+- **Deploy**: Uses SST v3 with AWS adapter (domain: merojosa.dev)
 - **No tests or linting configured** - do not assume test frameworks exist
 
 ## Code Style Guidelines
@@ -28,4 +29,12 @@
 
 - Use `.astro` extension for Astro components
 - Props: Define types inline with `type Props = { ... }`
-- No JSX comments - keep code clean without comments unless necessary
+- Frontmatter imports go first, followed by HTML/JSX, then `<style>` blocks
+- Use Astro's built-in `Image` component from `astro:assets` for images
+
+### Tailwind CSS
+
+- Custom font: 'inter' extends default sans-serif stack
+- Use Tailwind utility classes directly in markup
+- Arbitrary values allowed: `class="mx-[10vw]"`
+- Print media queries in component `<style>` blocks when needed
