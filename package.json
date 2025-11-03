@@ -9,7 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "generate-resume-pdf": "tsx scripts/generate-pdf.ts"
+    "generate-resume-pdf": "tsx scripts/generate-resume-pdf.ts"
   },
   "dependencies": {
     "@astrojs/tailwind": "^6.0.0",
