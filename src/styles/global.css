@@ -1,10 +1,5 @@
 @import '@fontsource/inter';
-@import 'tailwindcss';
 
-/* Inter reaches the page through Preflight's `html` font-family, which reads
-   --font-sans, so this is what actually sets the site font. */
-@theme {
-	--font-sans:
-		inter, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-		'Segoe UI Symbol', 'Noto Color Emoji';
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
