@@ -8,9 +8,12 @@ const __dirname = dirname(__filename);
 
 function startDevServer(): Promise<{ kill: () => Promise<void>; port: number }> {
 	return new Promise((resolve, reject) => {
-		const serverProcess = spawn('pnpm', ['dev'], {
+		// On Windows `pnpm` is a .cmd shim, which Node refuses to spawn without a shell.
+		const isWindows = process.platform === 'win32';
+		const serverProcess = spawn(isWindows ? 'pnpm.cmd' : 'pnpm', ['dev'], {
 			cwd: join(__dirname, '..'),
 			stdio: 'pipe',
+			shell: isWindows,
 		});
 
 		let resolved = false;

@@ -38,7 +38,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 		</article>
 
 		<article class="flex flex-col gap-3">
-			<h2 class="border-b-2 pb-1 text-3xl">Skills</h2>
+			<h2 class="border-b-2 border-gray-200 pb-1 text-3xl">Skills</h2>
 
 			<ul class="list-disc">
 				<li>
@@ -61,7 +61,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 		</article>
 
 		<article class="flex flex-col gap-3">
-			<h2 class="border-b-2 pb-1 text-3xl">Experience</h2>
+			<h2 class="border-b-2 border-gray-200 pb-1 text-3xl">Experience</h2>
 			<section class="flex flex-col gap-1">
 				<div class="flex items-center">
 					<div class="flex-1">
@@ -130,7 +130,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 		</article>
 
 		<article class="flex flex-col gap-3">
-			<h2 class="border-b-2 pb-1 text-3xl">Projects</h2>
+			<h2 class="border-b-2 border-gray-200 pb-1 text-3xl">Projects</h2>
 
 			<section class="flex flex-col gap-1">
 				<h3 class="text-xl font-extrabold">Organizer</h3>
@@ -165,7 +165,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 		</article>
 
 		<article class="flex flex-col gap-3">
-			<h2 class="border-b-2 pb-1 text-3xl">Education/Certification</h2>
+			<h2 class="border-b-2 border-gray-200 pb-1 text-3xl">Education/Certification</h2>
 
 			<section class="flex flex-col gap-1">
 				<h3 class="text-xl font-extrabold">AWS Certified Cloud Practitioner</h3>
@@ -213,17 +213,23 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 			color: black;
 		}
 
+		/* Tailwind v4's text-* utilities set line-height as a ratio rather than an
+		   absolute length, so shrinking font-size here would also shrink the heading
+		   line boxes. Pin them to keep the PDF's spacing and pagination stable. */
 		h1 {
 			font-size: 18px;
+			line-height: 40px;
 		}
 
 		h2 {
 			font-size: 16px;
 			padding: 0px;
+			line-height: 36px;
 		}
 
 		h3 {
 			font-size: 14px;
+			line-height: 28px;
 		}
 
 		article {
